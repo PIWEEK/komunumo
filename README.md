@@ -5,9 +5,7 @@ Komunumo ("community" in Esperanto) is a reference platform of cultural and soci
 
 More info: http://komunumo.xaviju.es
 
-Español
-========
-========
+##Español
 
 Komunumo ("comunidad", en esperanto) es una plataforma de referencia de las actividades y eventos culturales y sociales llevadas a cabo por asociaciones de un barrio concreto.
 
