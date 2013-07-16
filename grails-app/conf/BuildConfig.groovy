@@ -61,8 +61,6 @@ grails.project.dependency.resolution = {
         compile ':cache:1.0.1'
 
 		compile ":build-test-data:2.0.3"
-		test ":code-coverage:1.2.6"
-		compile ":codenarc:0.18.1"
 		compile ":faker:0.7"
 		compile ":fixtures:1.1"
 		test ":spock:0.7"
