@@ -1,0 +1,133 @@
+/* ===============================================================
+ *
+ * FRONT-O-MATIC
+ * A front-end development framework made by Kaleidos (http://kaleidos.net)
+ *
+ * Helpers
+ *
+ * =============================================================*/
+
+.hidden {
+    display: none;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.clear{
+    clear: both;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.text-indent {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/* =============================================
+ * STICKY FOOTER
+ * ============================================= */
+
+@footer-height: 221px;
+
+.content {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -@footer-height;
+}
+
+.footer, .footer-push {
+    height: @footer-height;
+}
+
+/* ==============================================
+ * TEXT SHADOW
+ * ============================================== */
+
+.text-shadow (@string: 1px 1px 0px #fff) {
+	text-shadow: @string;
+}
+
+/* ==============================================
+ * Common classes
+ * ============================================== */
+
+/* Structure */
+
+.sidebar{
+}
+
+.main{
+}
+
+/* Buttons */
+.btn{}
+
+/* Breadcrumb */
+
+.breadcrumb {
+    
+}
+
+/* Paginator */
+.paginator{
+    
+}
+
+
+/* Arrow */
+
+/*.top_arrow_box(#FFFFFF; 10%, 20px, #cccc; 1px)*/
+.top_arrow_box(@background; @position; @width; @border-color; @border-width) {
+	position: absolute;
+	background: @background;
+    &:after, &:before {
+        bottom: 100%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+    &:after {
+        border-color: transparent;
+        border-bottom-color: @background;
+        border-width: @width;
+        left: @position;
+        margin-left: -@width;
+    }
+    &:before {
+        border-color: transparent;
+        border-bottom-color: @border-color;
+        border-width:@border-width + @width;
+        left: @position;
+        margin-left: -(@border-width+@width);
+    }
+}

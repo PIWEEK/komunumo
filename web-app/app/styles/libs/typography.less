@@ -1,0 +1,48 @@
+/* ===============================================================
+ * 
+ * FRONT-O-MATIC
+ * A front-end development framework made by Kaleidos (http://kaleidos.net)
+ * 
+ * Typography
+ * 
+ * =============================================================*/
+
+ h1, h2, h3, h4, h5, h6 {
+  text-rendering: optimizelegibility; // Fix the character spacing for headings
+}
+
+h1 { }
+h2 { }
+h3 { }
+h4 { } 
+h5 { }
+h6 { }
+
+a{ }
+
+/* ==================================================
+// Typography helpers
+   =================================================*/
+
+small   { font-size: 85%; }
+strong  { font-weight: bold; }
+em      { font-style: italic; }
+cite    { font-style: normal; }
+
+.text-left           { text-align: left; }
+.text-right          { text-align: right; }
+.text-center         { text-align: center; }
+
+/* ==================================================
+// Import fonts
+   =================================================*/
+
+/* Example font */
+@font-face {
+    font-family: 'RobotoSlabBold';
+    src: url('/fonts/robotoslab-bold.eot');
+    src: url('/fonts/robotoslab-bold.eot') format('embedded-opentype'),
+         url('/fonts/robotoslab-bold.woff') format('woff'),
+         url('/fonts/robotoslab-bold.ttf') format('truetype'),
+         url('/fonts/robotoslab-bold.svg#RobotoSlabBold') format('svg');
+}
