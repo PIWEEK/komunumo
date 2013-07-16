@@ -6,21 +6,25 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
+        <title>Komunumo ¡Tu barrio está vivo!</title>
+<!--    USED ONLY IF RESPONSIVE STYLED
         <meta name="viewport" content="width=device-width">
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+-->
+        <meta name="description" content="Komunumo| Agenda de eventos de barrios de Madrid">
+        
         <!-- build:css({.tmp,app}) styles/main.css -->
-        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="app/styles/main.css">
         <!-- endbuild -->
+        
         <!-- build:js scripts/vendor/modernizr.js -->
-        <script src="bower_components/modernizr/modernizr.js"></script>
+        <script src="app/bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
+        
     </head>
     <body>
         <div class="container">
             <div class="hero-unit">
-                <h1>'Hola Komuo!</h1>
+                <h1>'Hola Komunumo!</h1>
                 <p>You now have</p>
                 <ul>
                     <li>HTML5 Boilerplate</li>
@@ -35,13 +39,14 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src='//www.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
+-->
 
         <!-- build:js scripts/main.js -->
         <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>

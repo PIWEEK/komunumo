@@ -1,22 +1,834 @@
+/* =====================================================================================
+ *
+ * FRONT-O-MATIC
+ * A front-end development framework made by Kaleidos (http://kaleidos.net)
+ *
+ * =====================================================================================*/
+
+/* Lesshat */
+
+/* Bootstrap */
+
+/* Core */
+
+/*! normalize.css v2.1.2 | MIT License | git.io/normalize */
+
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+
+[hidden],
+template {
+  display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+
+/**
+ * Remove default margin.
+ */
+
 body {
-    background: #fafafa;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #333;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+
+a {
+  background: transparent;
+}
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+  outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+
+h1 {
+  margin: 0.67em 0;
+  font-size: 2em;
+}
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
+hr {
+  height: 0;
+  -moz-box-sizing: content-box;
+       box-sizing: content-box;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+mark {
+  color: #000;
+  background: #ff0;
+}
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+
+pre {
+  white-space: pre-wrap;
+}
+
+/**
+ * Set consistent quote types.
+ */
+
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+
+figure {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+  padding: 0.35em 0.625em 0.75em;
+  margin: 0 2px;
+  border: 1px solid #c0c0c0;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+  padding: 0;
+  border: 0;
+}
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: 100%;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+button,
+input {
+  line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+  -webkit-appearance: textfield;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+
+textarea {
+  overflow: auto;
+  /* 1 */
+
+  vertical-align: top;
+  /* 2 */
+
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Bootstrap */
+
+/* Responsive */
+
+/* ===============================================================
+ * 
+ * FRONT-O-MATIC
+ * A front-end development framework made by Kaleidos (http://kaleidos.net)
+ * 
+ * Media Queries - From css-tricks.com
+ * http://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+ * 
+ * =============================================================*/
+
+/* Smartphones (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  {
+    /* Styles */
+  
+  }
+}
+
+/* Smartphones (landscape) ----------- */
+
+@media only screen and (min-width: 321px) {
+  {
+    /* Styles */
+  
+  }
+}
+
+/* Smartphones (portrait) ----------- */
+
+@media only screen and (max-width: 320px) {
+  {
+    /* Styles */
+  
+  }
+}
+
+/* iPads (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  {
+    /* Styles */
+  
+  }
+}
+
+/* iPads (landscape) ----------- */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  {
+    /* Styles */
+  
+  }
+}
+
+/* iPads (portrait) ----------- */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  {
+    /* Styles */
+  
+  }
+}
+
+/* Desktops and laptops ----------- */
+
+@media only screen and (min-width: 1224px) {
+  {
+    /* Styles */
+  
+  }
+}
+
+/* Large screens ----------- */
+
+@media only screen and (min-width: 1824px) {
+  {
+    /* Styles */
+  
+  }
+}
+
+/* iPhone 4 ----------- */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  {
+    /* Styles */
+  
+  }
+}
+
+/* Typography */
+
+/* ===============================================================
+ * 
+ * FRONT-O-MATIC
+ * A front-end development framework made by Kaleidos (http://kaleidos.net)
+ * 
+ * Typography
+ * 
+ * =============================================================*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-rendering: optimizelegibility;
+}
+
+/* ==================================================
+// Typography helpers
+   =================================================*/
+
+small {
+  font-size: 85%;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+cite {
+  font-style: normal;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* ==================================================
+// Import fonts
+   =================================================*/
+
+/* Example font */
+
+@font-face {
+  font-family: 'RobotoSlabBold';
+  src: url('/fonts/robotoslab-bold.eot');
+  src: url('/fonts/robotoslab-bold.eot') format('embedded-opentype'), url('/fonts/robotoslab-bold.woff') format('woff'), url('/fonts/robotoslab-bold.ttf') format('truetype'), url('/fonts/robotoslab-bold.svg#RobotoSlabBold') format('svg');
+}
+
+/* Colors */
+
+/* ===============================================================
+ * 
+ * FRONT-O-MATIC
+ * A front-end development framework made by Kaleidos (http://kaleidos.net)
+ * 
+ * Colors
+ * 
+ * =============================================================*/
+
+/*Basic Colors*/
+
+/* Customize colors */
+
+/* Project colors */
+
+/* Status */
+
+/* Warning */
+
+/* Print */
+
+/* ===============================================================
+ * 
+ * FRONT-O-MATIC
+ * A front-end development framework made by Kaleidos (http://kaleidos.net)
+ * 
+ * Based on HTML5 bolerplate print styles - h5bp.com
+ * 
+ * =============================================================*/
+
+@media print {
+  {
+    /*
+         * Don't show links for images, or javascript/internal links
+         */
+  
+  }
+  * {
+    color: #000 !important;
+    text-shadow: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */
+  
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  @page  {
+    margin: 0.5cm;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+/* Helpers */
+
+/* ===============================================================
+ *
+ * FRONT-O-MATIC
+ * A front-end development framework made by Kaleidos (http://kaleidos.net)
+ *
+ * Helpers
+ *
+ * =============================================================*/
+
+.hidden {
+  display: none;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: " ";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+.clear {
+  clear: both;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.text-indent {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* =============================================
+ * STICKY FOOTER
+ * ============================================= */
+
+.content {
+  height: auto !important;
+  height: 100%;
+  min-height: 100%;
+  margin: 0 auto -221px;
+}
+
+.footer,
+.footer-push {
+  height: 221px;
+}
+
+/* ==============================================
+ * TEXT SHADOW
+ * ============================================== */
+
+/* ==============================================
+ * Common classes
+ * ============================================== */
+
+/* Structure */
+
+/* Buttons */
+
+/* Breadcrumb */
+
+/* Paginator */
+
+/* Arrow */
+
+/*.top_arrow_box(#FFFFFF; 10%, 20px, #cccc; 1px)*/
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+  background: #ffffff;
 }
 
 .hero-unit {
-    margin: 50px auto 0 auto;
-    width: 300px;
-    font-size: 18px;
-    font-weight: 200;
-    line-height: 30px;
-    background-color: #eee;
-    border-radius: 6px;
-    padding: 60px;
+  width: 900px;
+  padding: 60px;
+  margin: 50px auto 0 auto;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  color: 0 4px 10px 0px rgba(0, 0, 0, 0.5);
+  background-color: #eee;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 6px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 4px 10px 0px rgba(0, 0, 0, 0.5);
+     -moz-box-shadow: 0 4px 10px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 4px 10px 0px rgba(0, 0, 0, 0.5);
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
 }
 
 .hero-unit h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+/* ========================================================================
+ * GENERIC LIGHTBOX NOW CALLED KOMUBOX
+ * ========================================================================= */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 499;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.komubox {
+  position: fixed;
+  left: 50%;
+  z-index: 999;
+  padding: 12px;
+  color: 0 4px 10px 0px rgba(0, 0, 0, 0.5);
+  background: #ffffff;
+  border: 1px solid #cbd6dc;
+  -webkit-box-shadow: 0 4px 10px 0px rgba(0, 0, 0, 0.5);
+     -moz-box-shadow: 0 4px 10px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 4px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.komubox .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #076ca4;
 }
