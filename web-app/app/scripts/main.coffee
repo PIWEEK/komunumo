@@ -1,10 +1,22 @@
-MainView = Backbone.View.extend({
-    
-    el: "body"
+class View extends Backbone.View
+@View = View
 
-    initialize: ->
-        console.log 'Hello from backbone'
+class Komunumo extends View
+    el: $('body')
+    models: {}
+    collections: {}
+    views: {}
+    # Private objects
+    _models: {}
+    _collections: {}
+    _views: {}
+    console.log 'Hello'
 
-});
+@app = new Komunumo()
 
-@MainView = new MainView()
+$ ->
+    view = $("body").data('view')
+    if (view)
+        viewCls = app.views[view]
+        if (viewCls)
+            app.main = new viewCls()
