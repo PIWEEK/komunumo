@@ -74,12 +74,31 @@
  * ============================================== */
 
 /* ==============================================
+ * Form classes
+ * ============================================== */
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+/* ==============================================
  * Common classes
  * ============================================== */
 
 /* Structure */
 
 /* Buttons */
+
+.btn {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #FFFFFF;
+  text-align: center;
+  text-decoration: none;
+  background-color: #165044;
+  border: 1px solid #000000;
+}
 
 /* Breadcrumb */
 
