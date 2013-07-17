@@ -1,5 +1,7 @@
 class View extends Backbone.View
+class Model extends Backbone.Model
 @View = View
+@Model = Model
 
 $ ->
     view = $("body").data('view')
@@ -13,6 +15,6 @@ class Komunumo extends View
     models: {}
     collections: {}
     views: {}
-    console.log "Welcome to Komunumo's Backbone"
+    console.log 'home'
 
 @app = new Komunumo()

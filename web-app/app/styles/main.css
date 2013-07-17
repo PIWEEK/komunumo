@@ -766,37 +766,17 @@ cite {
 
 /*.top_arrow_box(#FFFFFF; 10%, 20px, #cccc; 1px)*/
 
+/* Background cover */
+
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
   background: #ffffff;
 }
 
-.hero-unit {
-  width: 900px;
-  padding: 60px;
-  margin: 50px auto 0 auto;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  color: 0 4px 10px 0px rgba(0, 0, 0, 0.5);
-  background-color: #eee;
-  -webkit-border-radius: 5px;
-     -moz-border-radius: 5px;
-          border-radius: 6px;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 4px 10px 0px rgba(0, 0, 0, 0.5);
-     -moz-box-shadow: 0 4px 10px 0px rgba(0, 0, 0, 0.5);
-          box-shadow: 0 4px 10px 0px rgba(0, 0, 0, 0.5);
-  -webkit-background-clip: padding-box;
-     -moz-background-clip: padding;
-          background-clip: padding-box;
-}
-
-.hero-unit h1 {
-  font-size: 60px;
-  line-height: 1;
-  letter-spacing: -1px;
+.container {
+  width: 940px;
+  margin: 0 auto;
 }
 
 /* ========================================================================
@@ -831,4 +811,38 @@ body {
   top: 10px;
   right: 10px;
   color: #076ca4;
+}
+
+/* ====================================================
+ * HOME VIEW
+ * ========================================================= */
+
+.home-header {
+  padding: 35px 0 200px;
+  background: #000;
+  background: url('../images/background.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+}
+
+.home-header .logo {
+  width: 365px;
+  height: 100px;
+  padding: 0;
+  margin: 0;
+  background: url('../images/logo.png') no-repeat 0 0;
+}
+
+.home-header .activity-search {
+  background: #000000;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
 }
