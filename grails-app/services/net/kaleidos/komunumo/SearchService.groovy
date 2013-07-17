@@ -20,7 +20,13 @@ class SearchService {
     public List<Activity> activitySearch(Neighbourhood neighbourhood, ActivityType activityType, Integer days) {
 		
 		def activities = Activity.withCriteria {
-			eq "neighbourhood.id",  neighbourhood.id
+			if (neighbourhood) {
+				eq "neighbourhood.id",  neighbourhood.id
+			}
+			
+			if (activityType) {
+				eq "activityType.id", activityType.id
+			}
 		}
 
 		return activities
