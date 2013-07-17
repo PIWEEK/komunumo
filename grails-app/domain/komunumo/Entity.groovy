@@ -16,6 +16,10 @@ class Entity {
         activities: Activity
     ]
 
+    static mapping = {
+        description type: 'text'
+    }
+
     static constraints = {
         name (blank:false, unique:true)
         address (blank:true, nullable:true)
