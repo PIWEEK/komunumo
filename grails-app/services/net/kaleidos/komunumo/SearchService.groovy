@@ -1,5 +1,6 @@
 package net.kaleidos.komunumo
 
+import groovy.time.TimeCategory
 
 /**
  * Service for searching
@@ -17,15 +18,17 @@ class SearchService {
 	 * @param days
 	 * @return List of activities
 	 */
-    public List<Activity> activitySearch(Neighbourhood neighbourhood, ActivityType activityType, Integer days) {
-		
+    public List<Activity> activitySearch(Neighbourhood neighbourhood, ActivityType activityType, Date startDate, Date nextDate) {
+
 		def activities = Activity.withCriteria {
 			if (neighbourhood) {
 				eq "neighbourhood.id",  neighbourhood.id
-			}
-			
+			}			
 			if (activityType) {
 				eq "activityType.id", activityType.id
+			}			
+			if (startDate && nextDate) {
+				between('activityDate', startDate, nextDate)
 			}
 		}
 
