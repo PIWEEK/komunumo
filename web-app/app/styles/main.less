@@ -84,7 +84,43 @@ body {
         padding: 0;
     }
     .activity-search{
-        background: @black;
-        .border-radius(10px);
+        width: 862px;
+        background: rgba(0,0,0,0.7);
+        padding:20px 46px 23px 30px;
+        margin:88px auto 0px;
+        h2 {
+            font-family: 'Amatic SC';
+            font-size:70px;
+            font-weight:bold;
+            margin:0px;
+            color: @white;
+        }
+        form{
+            .column-count(4);
+            .column-gap(7px);
+            select {
+                width: 98%;
+                padding:10px 0px;
+                margin:40px 0px;
+                font-family: 'Roboto Condensed', sans-serif;
+                font-size:24px;
+                color:@darkgray;
+                background-color:@white;
+                option {
+                    color:@darkgreen;
+                }
+            }
+            .btn{
+                width:140px;
+                padding:6px 0px;
+                margin:44px 0 0;
+                font-size:24px;
+                display:block;
+                &:hover{
+                    .transition(all .2s ease-in);
+                    background:@black;
+                }
+            }
+        }
     }
  }
