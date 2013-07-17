@@ -17,8 +17,11 @@
     };
 
     HomeView.prototype.dataRetriever = function() {
-      var url;
-      url = "https://api.meetup.com/2/categories?&sign=true&fields=cinema&page=20&key=4a385c722714a33136f38124e661f";
+      var aTypeId, neighId, nextDate, url;
+      if (typeof /(?:)/ === "function") {
+        /(?:)/(neighId = 2 & (aTypeId = 3 & (nextDate = 30)));
+      }
+      url = "http://localhost:8080/komunumo/api/activity/search";
       return $.get(url, function(data) {
         return console.log(data);
       });

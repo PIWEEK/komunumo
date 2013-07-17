@@ -6,7 +6,8 @@ class HomeView extends View
 
     dataRetriever: ->
     
-        url = "https://api.meetup.com/2/categories?&sign=true&fields=cinema&page=20&key=4a385c722714a33136f38124e661f"
+        //?neighId=2&aTypeId=3&nextDate=30
+        url = "http://localhost:8080/komunumo/api/activity/search"
         
         $.get url, (data) ->
             console.log (data)
