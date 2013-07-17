@@ -150,7 +150,7 @@ class SearchServiceIntegrationSpec extends IntegrationSpec {
 		when:
 			def activitiesNextWeek1 = searchService.activitySearch(neighbourhood2, activityType2, now, nextWeek)
 			def activitiesNextWeek2 = searchService.activitySearch(neighbourhood2, activityType1, now, nextWeek)
-
+			def activitiesNow = searchService.activitySearch(neighbourhood1, activityType1, realNow, restOfDay)
 			
 		then:
 			activitiesNextWeek1.size() == 1
@@ -158,6 +158,8 @@ class SearchServiceIntegrationSpec extends IntegrationSpec {
 			
 			activitiesNextWeek2.size() == 1
 			activitiesNextWeek2[0] == activity2
+			
+			activitiesNow.size() == 0			
 	}
 	
 	
