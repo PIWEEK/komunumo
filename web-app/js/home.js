@@ -12,7 +12,6 @@
     }
 
     HomeView.prototype.initialize = function() {
-      console.log("Welcome to Komunumo's backboneJS");
       return this.dataRetriever();
     };
 
@@ -23,7 +22,19 @@
       }
       url = "http://localhost:8080/komunumo/api/activity/search";
       return $.get(url, function(data) {
-        return console.log(data);
+        var item, _i, _len, _ref1, _results;
+        _ref1 = data.list;
+        _results = [];
+        for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
+          item = _ref1[_i];
+          console.log(item);
+          console.log(item["class"]);
+          console.log(item.id);
+          console.log(item.activityDate);
+          console.log(item.activityType);
+          _results.push(console.log(item.address));
+        }
+        return _results;
       });
     };
 
