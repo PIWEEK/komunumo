@@ -1,9 +1,9 @@
-package komunumo
+package net.kaleidos.komunumo
 
 import org.springframework.dao.DataIntegrityViolationException
 import grails.plugins.springsecurity.Secured
 
 @Secured("isAuthenticated()")
-class ActivityTypeController {
+class EntityController {
 	static scaffold = true	
 }

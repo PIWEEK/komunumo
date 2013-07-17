@@ -1,4 +1,4 @@
-package komunumo
+package net.kaleidos.komunumo
 
 import grails.test.*
 import grails.plugin.spock.*
@@ -6,8 +6,10 @@ import spock.lang.*
 
 
 class SearchServiceIntegrationSpec extends IntegrationSpec {
+	
+	def searchService
 
-	void "searching activities for a neighborhood given"() {
+	void "searching activities for a given neighborhood"() {
 		setup:
 		
 			def city = City.build()
@@ -24,13 +26,12 @@ class SearchServiceIntegrationSpec extends IntegrationSpec {
 			def activity2 = Activity.build(neighbourhood: neighbourhood2, activityType: activityType1, entity: entity, name: 'Activity2')
 			def activity3 = Activity.build(neighbourhood: neighbourhood2, activityType: activityType2, entity: entity, name: 'Activity3')
 
-			def a = 3
-		
 		when:
-			a = 3		
-		
+			def activitiesNeighbourhood1 = searchService.activitySearch(neighbourhood1, null, null)		
+			def activitiesNeighbourhood2 = searchService.activitySearch(neighbourhood2, null, null)
+			
 		then:
-			a == 3
-			println activity1
+			activitiesNeighbourhood1.size() == 1
+			activitiesNeighbourhood2.size() == 2
 	}
 }

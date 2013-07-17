@@ -1,4 +1,4 @@
-package komunumo
+package net.kaleidos.komunumo
 
 import grails.plugins.springsecurity.Secured
 

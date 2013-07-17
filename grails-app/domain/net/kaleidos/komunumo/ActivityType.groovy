@@ -1,11 +1,11 @@
-package komunumo
+package net.kaleidos.komunumo
 
-class City {
+class ActivityType {
 
     String name
 
     static hasMany = [
-       neighbourhoods : Neighbourhood
+        activities: Activity
     ]
 
     static constraints = {
