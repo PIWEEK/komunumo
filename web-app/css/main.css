@@ -1,3 +1,7 @@
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:400,700);
+
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed);
+
 /* =====================================================================================
  *
  * FRONT-O-MATIC
@@ -520,12 +524,12 @@ table {
 /* Typography */
 
 /* ===============================================================
- * 
+ *
  * FRONT-O-MATIC
  * A front-end development framework made by Kaleidos (http://kaleidos.net)
- * 
+ *
  * Typography
- * 
+ *
  * =============================================================*/
 
 h1,
@@ -573,23 +577,15 @@ cite {
 // Import fonts
    =================================================*/
 
-/* Example font */
-
-@font-face {
-  font-family: 'RobotoSlabBold';
-  src: url('/fonts/robotoslab-bold.eot');
-  src: url('/fonts/robotoslab-bold.eot') format('embedded-opentype'), url('/fonts/robotoslab-bold.woff') format('woff'), url('/fonts/robotoslab-bold.ttf') format('truetype'), url('/fonts/robotoslab-bold.svg#RobotoSlabBold') format('svg');
-}
-
 /* Colors */
 
 /* ===============================================================
- * 
+ *
  * FRONT-O-MATIC
  * A front-end development framework made by Kaleidos (http://kaleidos.net)
- * 
+ *
  * Colors
- * 
+ *
  * =============================================================*/
 
 /*Basic Colors*/
@@ -751,12 +747,31 @@ cite {
  * ============================================== */
 
 /* ==============================================
+ * Form classes
+ * ============================================== */
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+/* ==============================================
  * Common classes
  * ============================================== */
 
 /* Structure */
 
 /* Buttons */
+
+.btn {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #FFFFFF;
+  text-align: center;
+  text-decoration: none;
+  background-color: #165044;
+  border: 1px solid #000000;
+}
 
 /* Breadcrumb */
 
@@ -838,11 +853,56 @@ body {
 }
 
 .home-header .activity-search {
+  width: 862px;
+  padding: 20px 46px 23px 30px;
+  margin: 88px auto 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.home-header .activity-search h2 {
+  margin: 0;
+  font-family: 'Amatic SC';
+  font-size: 70px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.home-header .activity-search form {
+  -webkit-column-count: 4;
+     -moz-column-count: 4;
+          column-count: 4;
+  -webkit-column-gap: 7px;
+     -moz-column-gap: 7px;
+          column-gap: 7px;
+}
+
+.home-header .activity-search form select {
+  width: 98%;
+  padding: 10px 0;
+  margin: 40px 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 24px;
+  color: #6f6f6f;
+  background-color: #ffffff;
+}
+
+.home-header .activity-search form select option {
+  color: #165044;
+}
+
+.home-header .activity-search form .btn {
+  display: block;
+  width: 140px;
+  padding: 6px 0;
+  margin: 44px 0 0;
+  font-size: 24px;
+}
+
+.home-header .activity-search form .btn:hover {
   background: #000000;
-  -webkit-border-radius: 10px;
-     -moz-border-radius: 10px;
-          border-radius: 10px;
-  -webkit-background-clip: padding-box;
-     -moz-background-clip: padding;
-          background-clip: padding-box;
+  -webkit-transition: all 0.2s ease-in;
+     -moz-transition: all 0.2s ease-in;
+      -ms-transition: all 0.2s ease-in;
+       -o-transition: all 0.2s ease-in;
+          transition: all 0.2s ease-in;
 }

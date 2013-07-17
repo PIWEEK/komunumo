@@ -1,10 +1,14 @@
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:400,700);
+
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed);
+
 /* ===============================================================
- * 
+ *
  * FRONT-O-MATIC
  * A front-end development framework made by Kaleidos (http://kaleidos.net)
- * 
+ *
  * Typography
- * 
+ *
  * =============================================================*/
 
 h1,
@@ -51,11 +55,3 @@ cite {
 /* ==================================================
 // Import fonts
    =================================================*/
-
-/* Example font */
-
-@font-face {
-  font-family: 'RobotoSlabBold';
-  src: url('/fonts/robotoslab-bold.eot');
-  src: url('/fonts/robotoslab-bold.eot') format('embedded-opentype'), url('/fonts/robotoslab-bold.woff') format('woff'), url('/fonts/robotoslab-bold.ttf') format('truetype'), url('/fonts/robotoslab-bold.svg#RobotoSlabBold') format('svg');
-}
