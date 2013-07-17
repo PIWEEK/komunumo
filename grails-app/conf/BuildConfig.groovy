@@ -40,7 +40,7 @@ grails.project.dependency.resolution = {
 
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
-
+		test "org.spockframework:spock-grails-support:0.7-groovy-2.0"
         // runtime 'mysql:mysql-connector-java:5.1.22'
     }
 
@@ -63,8 +63,9 @@ grails.project.dependency.resolution = {
 		compile ":build-test-data:2.0.3"
 		compile ":faker:0.7"
 		compile ":fixtures:1.1"
-		test ":spock:0.7"
-		
+	    test(":spock:0.7") {
+	      exclude "spock-grails-support"
+	    }		
 		compile ":spring-security-core:1.2.7.3"
 		compile ":slug-generator:0.1"
 		
