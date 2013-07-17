@@ -964,3 +964,28 @@ body {
        -o-transition: all 0.2s ease-in;
           transition: all 0.2s ease-in;
 }
+
+.home-body .activity-list .title-activities {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 40px;
+}
+
+.home-footer {
+  height: 134px;
+  padding: 60px 40px 0 40px;
+  background-color: #333333;
+}
+
+.home-footer .logo {
+  float: left;
+  width: 227px;
+  height: 56px;
+  background: url('../images/logo_footer.png') no-repeat 0 0;
+}
+
+.home-footer .logo-piweek {
+  float: right;
+  width: 166px;
+  height: 38px;
+  background: url('../images/logo_piweek.png') no-repeat 0 0;
+}

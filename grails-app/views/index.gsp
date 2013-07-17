@@ -98,8 +98,12 @@
         </nav>
         <section class="home-body">
             <div class="container activity-list">
-
+                <p class="title-activities">Busco <span>gastronomía</span> en <span>guindalera</span> <span>hoy</span></p>
             </div><!-- /container -->
+        </section><!-- body home -->
+        <section class="home-footer clearfix">
+            <div class="logo text-indent">Komunumo</div>
+            <div class="logo-piweek text-indent">Piweek</div>
         </section><!-- body home -->
 
         <!--[if lt IE 7]>
@@ -114,6 +118,6 @@
         <script src="js/home.js"></script>
         <script src="js/model/home.js"></script>
         <!-- endbuild -->
-        
+
     </body>
 </html>
