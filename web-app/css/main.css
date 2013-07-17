@@ -906,3 +906,61 @@ body {
        -o-transition: all 0.2s ease-in;
           transition: all 0.2s ease-in;
 }
+
+.alt-header {
+  height: 60px;
+  padding: 9px 0;
+  background-color: rgba(49, 101, 91, 0.8);
+  border-top: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+}
+
+.alt-header .logo {
+  float: left;
+  width: 175px;
+  height: 43px;
+  padding: 0;
+  margin: 0;
+  background: url('../images/logo_small.png') no-repeat 0 0;
+}
+
+.alt-header form {
+  float: right;
+  width: 640px;
+  margin: auto 100px auto auto;
+  -webkit-column-count: 4;
+     -moz-column-count: 4;
+          column-count: 4;
+  -webkit-column-gap: 7px;
+     -moz-column-gap: 7px;
+          column-gap: 7px;
+}
+
+.alt-header form select {
+  width: 98%;
+  padding: 5px 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 18px;
+  color: #6f6f6f;
+  background-color: #ffffff;
+}
+
+.alt-header form select option {
+  color: #165044;
+}
+
+.alt-header form .btn {
+  display: block;
+  width: 140px;
+  padding: 6px 0;
+  font-size: 18px;
+}
+
+.alt-header form .btn:hover {
+  background: #000000;
+  -webkit-transition: all 0.2s ease-in;
+     -moz-transition: all 0.2s ease-in;
+      -ms-transition: all 0.2s ease-in;
+       -o-transition: all 0.2s ease-in;
+          transition: all 0.2s ease-in;
+}

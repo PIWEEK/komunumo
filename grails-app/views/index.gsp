@@ -53,7 +53,7 @@
             </div><!-- /container -->
         </section><!-- head home -->
         <nav class="alt-header">
-            <div class="container">
+            <div class="container clearfix">
                 <div class="logo text-indent">Komunumo</div>
                 <form>
                     <fieldset>
@@ -98,6 +98,7 @@
         </nav>
         <section class="home-body">
             <div class="container activity-list">
+
             </div><!-- /container -->
         </section><!-- body home -->
 
