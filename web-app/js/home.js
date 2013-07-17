@@ -18,7 +18,7 @@
 
     HomeView.prototype.dataRetriever = function() {
       var url;
-      url = "https://api.meetup.com/2/categories?&sign=true&fields=cinema&page=20";
+      url = "https://api.meetup.com/2/categories?&sign=true&fields=cinema&page=20&key=4a385c722714a33136f38124e661f";
       return $.get(url, function(data) {
         return console.log(data);
       });
