@@ -71,6 +71,7 @@ body {
  * HOME VIEW
  * ========================================================= */
 
+/* Header */
  .home-header{
     padding: 35px 0 200px;
     background: #000; /* Fallback */
@@ -125,12 +126,17 @@ body {
     }
  }
 
+/* Alt header */
  .alt-header{
     height: 60px;
     padding:9px 0;
     background-color:rgba(49,101,91,.8);
     border-top:2px solid darken(#165044, 20%);
     border-bottom:2px solid darken(#165044, 20%);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
     .logo{
         width: 175px;
         height: 43px;
@@ -169,16 +175,79 @@ body {
     }
  }
 
+/* Activities list */
  .home-body{
     .activity-list{
         .title-activities{
             font-family: 'Roboto Condensed', sans-serif;
             font-size:40px;
+            .text-shadow (1px 1px 0px #333);
+            text-transform: lowercase;
+        }
+    }
+    .activity-list-body{
+        .single-activity{
+            width: 260px;
+            float: left;
+            margin-right: 50px;
+            margin-bottom: 50px;
+            font-family: 'Roboto Condensed', sans-serif;
+            color: @darkgray;
+            position: relative;
+            .activity-body{
+                z-index: 3;
+                .box-shadow(0 1px 10px rgba(0,0,0,.2));
+                height: 210px;
+                h3{
+                    padding: 15px 15px 15px 50px;
+                    border-top: 3px solid;
+                    border-bottom: 3px solid;
+                    margin: 0;
+                }
+                .description{
+                    padding: 8px;
+                    color: darken(@lightgray, 20%);
+                    margin: 0;
+                }
+            }
+            .metadata-activity{
+                margin: 0;
+                padding: 10px;
+                list-style: none;
+                background: @lightgray;
+                .box-shadow(0 4px 3px rgba(0,0,0,.1));
+                width: 90%;
+                margin: 0 auto;
+                li{
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    font-size: 16px;
+                    span{
+                        font-size: 22px;
+                    }
+                }
+            }
+            .date{
+                position: absolute;
+                top: 10px;
+                left: -10px;
+                padding: 8px 12px;
+                background: #000;
+                width: 50px;
+                overflow: hidden;
+                color: @white;
+                .text-shadow (1px 1px 0px #666);
+            }
         }
     }
  }
 
- .home-footer{
+/* ================================================================
+ * FOOTER
+ * =============================================================== */
+ 
+ .footer{
     padding:60px 40px 0 40px;
     background-color:@lightblack;
     height: 134px;

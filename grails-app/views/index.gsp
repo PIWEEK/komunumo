@@ -11,7 +11,7 @@
                 <div class="activity-search">
                     <h2>Qué hacer en el barrio</h2>
                     <form>
-                        <fieldset>
+                        <fieldset class="neighborhood-select">
                             <select>
                                 <option class="default selected" selected="selected">¿Qué barrio?</option>
                                 <option>Barrio 1</option>
@@ -23,7 +23,7 @@
                                 <option>Barrio 7</option>
                             </select>
                         </fieldset>
-                        <fieldset>
+                        <fieldset class="activity-select">
                             <select>
                                 <option class="default selected" selected="selected">¿Qué actividad?</option>
                                 <option>Arte y cultura</option>
@@ -36,7 +36,7 @@
                                 <option>Actividad múltiple</option>
                             </select>
                         </fieldset>
-                        <fieldset>
+                        <fieldset class="date-select">
                             <select>
                                 <option class="default selected" selected="selected">¿Cuándo?</option>
                                 <option>Hoy</option>
@@ -46,13 +46,13 @@
                             </select>
                         </fieldset>
                         <fieldset>
-                            <a href="#" class="btn" title="Busca eventos">Buscar!</a>
+                            <a href="#" class="search-event btn" title="Busca eventos">Buscar!</a>
                         </fieldset>
                     </form>
                 </div>
             </div><!-- /container -->
         </section><!-- head home -->
-        <nav class="alt-header">
+        <nav class="alt-header hidden">
             <div class="container clearfix">
                 <div class="logo text-indent">Komunumo</div>
                 <form>
@@ -98,13 +98,21 @@
         </nav>
         <section class="home-body">
             <div class="container activity-list">
-                <p class="title-activities">Busco <span>gastronomía</span> en <span>guindalera</span> <span>hoy</span></p>
+                <p class="title-activities">
+                    Busco <span class="activity-search">gastronomía</span> <span class="neigborhood-search">en guindalera</span> <span class="date-search">hoy</span>
+                </p>
             </div><!-- /container -->
+            
+            <div class="container activity-list-body">
+                <div data-bind="collection:$collection"></div>
+            </div>
+
+            
         </section><!-- body home -->
-        <section class="home-footer clearfix">
+        <footer class="home-footer clearfix">
             <div class="logo text-indent">Komunumo</div>
             <div class="logo-piweek text-indent">Piweek</div>
-        </section><!-- body home -->
+        </footer><!-- body home -->
 
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
@@ -114,10 +122,34 @@
         <script src="app/bower_components/jquery/jquery.js"></script>
         <script src="app/bower_components/underscore/underscore.js"></script>
         <script src="app/bower_components/backbone/backbone.js"></script>
+        <script src="app/bower_components/epoxy/backbone.epoxy.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/home.js"></script>
         <script src="js/model/home.js"></script>
         <!-- endbuild -->
 
+        <script type="text/template" id="activity-template">
+                <div class="single-activity {{ activityType.class }}">
+                    <div class="activity-body">
+                        <h3>{{name}}</h3>
+                        <p class="description">{{ description }}</p>
+                    </div>
+                    <ul class="metadata-activity">
+                        <li class="address">
+                            <span class="typcn typcn-location-outline"></span>
+                            {{ place }}
+                        </li>
+                        <li class="activity-type">
+                            <span class="typcn typcn-wine"></span>
+                            {{ activityType.class }}
+                        </li>
+                    </ul>
+                    <div class="date">
+                        {{ activityDate }}
+                    </div>
+                </div>
+            
+        </script>
+        
     </body>
 </html>
