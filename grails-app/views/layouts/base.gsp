@@ -25,5 +25,8 @@
 		<div class="footer" role="contentinfo"></div>
 		<g:javascript library="application"/>
 		<r:layoutResources />
+        <script src="app/bower_components/jquery/jquery.js"></script>
+        <script src="app/bower_components/underscore/underscore.js"></script>
+        <script src="app/bower_components/backbone/backbone.js"></script>
 	</body>
 </html>
