@@ -8,7 +8,8 @@ class UrlMappings {
 			}
 		}
 		
-		name admin: "/admin" {controller = 'admin'; action = 'scaffolding'}		
+		name admin: "/admin" {controller = 'admin'; action = 'scaffolding'}
+		name search: "/api/activity/search" {controller = 'search'; action = 'activitySearch'}		
 		
 		"/login/$action?"(controller: "login")
 		"/logout/$action?"(controller: "logout")

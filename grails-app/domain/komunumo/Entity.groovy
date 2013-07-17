@@ -27,4 +27,8 @@ class Entity {
         description (blank:true, nullable:true)
         entityType (blank:true, nullable:true)
     }
+	
+	static mapping = {
+		description type: 'text'
+	}
 }
