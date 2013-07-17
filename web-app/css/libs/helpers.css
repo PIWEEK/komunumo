@@ -1,0 +1,92 @@
+/* ===============================================================
+ *
+ * FRONT-O-MATIC
+ * A front-end development framework made by Kaleidos (http://kaleidos.net)
+ *
+ * Helpers
+ *
+ * =============================================================*/
+
+.hidden {
+  display: none;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: " ";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+.clear {
+  clear: both;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.text-indent {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* =============================================
+ * STICKY FOOTER
+ * ============================================= */
+
+.content {
+  height: auto !important;
+  height: 100%;
+  min-height: 100%;
+  margin: 0 auto -221px;
+}
+
+.footer,
+.footer-push {
+  height: 221px;
+}
+
+/* ==============================================
+ * TEXT SHADOW
+ * ============================================== */
+
+/* ==============================================
+ * Common classes
+ * ============================================== */
+
+/* Structure */
+
+/* Buttons */
+
+/* Breadcrumb */
+
+/* Paginator */
+
+/* Arrow */
+
+/*.top_arrow_box(#FFFFFF; 10%, 20px, #cccc; 1px)*/
+
+/* Background cover */
