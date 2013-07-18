@@ -12,6 +12,7 @@ class ActivityController {
         def activityTypeId = subcat
         def activityDateOption = kw
 
+        def neighbourhood
         if (neighbourhoodId) {
             neighbourhood = Neighbourhood.get(neighbourhoodId)
             if (!neighbourhood) {
@@ -19,35 +20,46 @@ class ActivityController {
 			}
         }
 
+        def activityType
         if (activityTypeId) {
             activityType = ActivityType.get(activityTypeId)
             if (!activityType) {
                 activityType = null
             }
         }
+
+        def endDate, realNow, now
         if (activityDateOption) {
+
+            realNow = new Date()
+			now = realNow.clearTime()
+
             use(TimeCategory) {
 				switch (activityDateOption) {
-				case 0:
-					nextDate = now + 1.days
+				case "0":
+					endDate = now + 1.days
 					break;
-				case 1:
-					nextDate = now + 2.days
+				case "1":
+					endDate = now + 2.days
 					break;
-				case 3:
-					nextDate = now + 4.days
+				case "3":
+					endDate = now + 4.days
 					break;
-				case 7:
-					nextDate = now + 1.week + 1.day
+				case "7":
+					endDate = now + 1.week + 1.day
 					break;
-				case 30:
-					nextDate = now + 1.months + 1.day
+				case "30":
+					endDate = now + 1.months + 1.day
+					break;
+				default:
+					realNow = null
+					endDate = null
 					break;
 				}
 			}
         }
 
-        def activitiesList = searchService.activitySearch(neighbourhood, activityType, now, nextDate)
+        def activitiesList = searchService.activitySearch(neighbourhood, activityType, realNow, endDate)
 
         String text = 'lat\tlon\ticon\ticonSize\ticonOffset\ttitle\tdescription\tpopupSize\n'
 
