@@ -49,7 +49,8 @@ class SearchService {
 			
 			result << [
 				'id' : activity.id,
-				'activityDate' : activity.activityDate.format("dd") + " " + threeLettersMonth,
+				'activityDayDate' : activity.activityDate.format("dd"),
+				'activityDayMonth' : threeLettersMonth,
 				'activityTypeName' : activity.activityType?.name,
 				'activityTypeId' : activity.activityType?.id,
 				'url' : activityDetail,
