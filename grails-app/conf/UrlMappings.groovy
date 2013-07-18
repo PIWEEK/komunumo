@@ -6,6 +6,7 @@ class UrlMappings {
 		name activityMap: "/api/activity/map" {controller = 'activity'; action = 'activityMap'}
         name index: "/" {controller = 'index'; action = 'show'}
         name activityDetail: "/activity/detail" {controller = 'activity'; action = 'activityDetail'}
+        name activityDetailMap: "/api/activity/detail/map" {controller = 'activity'; action = 'activityDetailMap'}
         name entityDetail: "/entity/detail" {controller = 'entity'; action = 'entityDetail'}
 
 		"/login/$action?"(controller: "login")
