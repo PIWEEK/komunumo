@@ -77,4 +77,13 @@ class ActivityController {
 
         render text
     }
+
+    def activityShow(String activityId) {
+        def activity
+        if (activityId) {
+            activity = Activity.get(activityId)
+        }
+
+        return render(view:'/activity', model:[activity: activity])
+    }
 }
