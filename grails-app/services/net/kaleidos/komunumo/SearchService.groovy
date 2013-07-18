@@ -51,6 +51,7 @@ class SearchService {
 				'id' : activity.id,
 				'activityDate' : activity.activityDate.format("dd") + " " + threeLettersMonth,
 				'activityTypeName' : activity.activityType?.name,
+				'activityTypeId' : activity.activityType?.id,
 				'url' : activityDetail,
 				'address' : activity.address,
 				'description' : activity.description.size() > 50 ? activity.description[0..49] : activity.description,
