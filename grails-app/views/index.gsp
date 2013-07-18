@@ -122,7 +122,7 @@
         <script src="app/bower_components/jquery/jquery.js"></script>
         <script src="app/bower_components/underscore/underscore.js"></script>
         <script src="app/bower_components/backbone/backbone.js"></script>
-        <script src="app/bower_components/epoxy/backbone.epoxy.min.js"></script>
+        <script src="app/bower_components/backbone.epoxy/backbone.epoxy.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/home.js"></script>
         <script src="js/model/home.js"></script>
