@@ -11,13 +11,13 @@ class SearchController {
 
     def activitySearch() {
 		
-		def error = false
+		def success = true
 		
 		def neighbourhood = null
 		if (params.neighId) {
 			neighbourhood = Neighbourhood.get(params.neighId)
 			if (!neighbourhood) {
-				error = true
+				success = false
 			} 
 		}
 		
@@ -25,7 +25,7 @@ class SearchController {
 		if (params.aTypeId) {
 			activityType = ActivityType.get(params.aTypeId)
 			if (!activityType) {
-				error = true
+				success = false
 			}
 		}
 		
@@ -52,14 +52,17 @@ class SearchController {
 				case 30:
 					nextDate = now + 1.months + 1.day
 					break;
+				default:
+					success = false
+					break;
 				}
 			}
 		}
-println "-------------------> ${neighbourhood} - ${activityType} - "		
 		
-		def result = searchService.activitySearch(neighbourhood, activityType, now, nextDate)
+		def result = searchService.activitySearch(neighbourhood, activityType, realNow, nextDate)
 		
-//println "===================> ${json}"		
-			return render(text:[success:error, list:Activity.list()] as JSON, contentType:'text/json')
+println "-------------------> ${neighbourhood} - ${activityType} - ${realNow} - ${nextDate} - ${success}"		
+		
+			return render(text:[success:success, list:result] as JSON, contentType:'text/json')
 	}
 }

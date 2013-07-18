@@ -20,8 +20,8 @@ class SearchService {
 	 */
     public List<Activity> activitySearch(Neighbourhood neighbourhood, ActivityType activityType, Date startDate, Date nextDate) {
 		
-println "=> ${neighbourhood} - ${activityType} - ${startDate} - ${nextDate}"		
-
+		println "===================> ${neighbourhood} - ${activityType} - ${startDate} - ${nextDate}"
+		
 		def activities = Activity.withCriteria {
 			if (neighbourhood) {
 				eq "neighbourhood.id",  neighbourhood.id
