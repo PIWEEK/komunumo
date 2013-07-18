@@ -62,6 +62,7 @@
       var element;
       element = this;
       this.initDataRetriever();
+      this.initMap();
       return $(window).scroll(function() {
         var headerHeight, scrollPosition;
         headerHeight = $('.home-header').height();
@@ -83,14 +84,25 @@
       });
     };
 
+    HomeView.prototype.initMap = function() {};
+
     HomeView.prototype.searchEvents = function() {
-      var activity, activityDefault, date, dateDefault, neighborhood, neighborhoodDefault, parameters, searchUrl;
+      var activity, activityDefault, date, dateDefault, element, neighborhood, neighborhoodDefault, parameters, searchUrl;
+      element = this;
       parameters = $('.search-form').serialize();
       searchUrl = "api/activity/search";
       $.ajax(searchUrl, {
         data: parameters,
         success: function(res) {
-          return console.log(res.list);
+          element.collection.reset(res.list);
+          console.log(element.collection);
+          if (element.collection.length > 0) {
+            return $('body').animate({
+              scrollTop: 670
+            }, 1000);
+          } else {
+            return element.$('.title-activities').text('Vaya, parece que no hay resultados...');
+          }
         }
       });
       neighborhood = this.$el.find('.neighborhood-select option:selected').text();

@@ -58,8 +58,6 @@
 
     Komunumo.prototype.views = {};
 
-    console.log('home');
-
     return Komunumo;
 
   })(View);

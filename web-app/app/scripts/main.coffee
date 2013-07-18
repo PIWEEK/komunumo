@@ -15,6 +15,5 @@ class Komunumo extends View
     models: {}
     collections: {}
     views: {}
-    console.log 'home'
 
 @app = new Komunumo()

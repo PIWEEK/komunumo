@@ -23,12 +23,9 @@ class HomeView extends Backbone.Epoxy.View
 
     initialize: ->
         element = @
-        #Arguments
-        #?neighId=2&aTypeId=3&nextDate=30
         
         @initDataRetriever()
-
-        
+        @initMap()
 
         #Scroll watcher
         $(window).scroll ->
@@ -46,22 +43,39 @@ class HomeView extends Backbone.Epoxy.View
         $.get searchUrl, (data) =>
             @collection.set(data.list)
 
-    searchEvents: ->
+    initMap: ->
+        #
+        #Update Map
+        #neighborhoodVal = @$el.find('.neighborhood-select option:selected').val()
+        #activityVal = @$el.find('.activity-select option:selected').text()
+        #dateVal = @$el.find('.date-select option:selected').text()
+        
+        #console.log $('.map');
+        #@$el.find('.map').data('filter-category').value(neighborhoodVal)
+        #@$el.find('.map').data('filter-subcategory').value(activityVal)
+        #@$el.find('.map').data('filter-keywords').value(dateVal)
 
-        #UpdateSearch
+        #@Macadjan.mapView.refresh()
+        ##
+
+    searchEvents: ->
+    
+        element = @
         parameters = $('.search-form').serialize()
         searchUrl = "api/activity/search"
-
+        
         $.ajax searchUrl,
             data :
                 parameters
             success  : (res) ->
-                console.log res.list
-                #@collection.reset(data.list)
-                #@$el.animate({ scrollTop: 670 }, 1000);
-                #@$el.find("#activity-template").emty()
-                #@ListItemView.initialize()
-                
+                element.collection.reset(res.list)
+                console.log element.collection
+                if element.collection.length > 0
+                    $('body').animate {
+                        scrollTop: 670
+                    }, 1000
+                else
+                    element.$('.title-activities').text('Vaya, parece que no hay resultados...')
 
         #Text on select
         neighborhood = @$el.find('.neighborhood-select option:selected').text()
@@ -85,19 +99,5 @@ class HomeView extends Backbone.Epoxy.View
             @$el.find('.title-activities .date-search').text(date)
         else
             @$el.find('.title-activities .date-search').text('cuando sea')
-
-        #
-        #Update Map
-        #neighborhoodVal = @$el.find('.neighborhood-select option:selected').val()
-        #activityVal = @$el.find('.activity-select option:selected').text()
-        #dateVal = @$el.find('.date-select option:selected').text()
-        
-        #console.log $('.map');
-        #@$el.find('.map').data('filter-category').value(neighborhoodVal)
-        #@$el.find('.map').data('filter-subcategory').value(activityVal)
-        #@$el.find('.map').data('filter-keywords').value(dateVal)
-
-        #@Macadjan.mapView.refresh()
-        ##
             
 homeView = new HomeView
