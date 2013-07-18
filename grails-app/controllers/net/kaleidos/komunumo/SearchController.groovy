@@ -63,7 +63,7 @@ class SearchController {
 		
 		def result = searchService.activitySearch(neighbourhood, activityType, realNow, endDate)
 		if (success) {
-			return render(text:[success:success, list:result] as JSON, contentType:'text/json')
+			return render(text:[success:success, list:searchService.activityJsonFormatter(Activity.list())] as JSON, contentType:'text/json')
 		} else {
 		return render(text:[success:success, list:[]] as JSON, contentType:'text/json')
 		}
