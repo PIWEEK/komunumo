@@ -26,7 +26,6 @@ Macadjan.MapView = Backbone.View.extend({
     events: {},
 
     initialize: function() {
-        _.bindAll(this);
 
         this.map = this.createMap();
 
@@ -275,7 +274,6 @@ Macadjan.MapPageView = Backbone.View.extend({
     },
 
     initialize: function() {
-        _.bindAll(this);
 
         Macadjan.categories.on('reset', this.onResetCategories);
         Macadjan.subCategories.on('reset', this.onResetSubCategories);
@@ -474,4 +472,3 @@ Macadjan.MapPageView = Backbone.View.extend({
 });
 
 Macadjan.mapPage = new Macadjan.MapPageView();
-
