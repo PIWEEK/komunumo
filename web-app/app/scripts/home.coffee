@@ -56,9 +56,11 @@ class HomeView extends Backbone.Epoxy.View
         #trigger('macadjan:refresh')
  
     searchEvents: (event) ->
-        event.preventDefault()
         element = @
-        parameters = $('.search-form').serialize()
+        event.preventDefault()
+        target = $(event.currentTarget)
+        
+        parameters = target.closest($('form')).serialize()
         searchUrl = "api/activity/search"
         
         $.ajax searchUrl,
@@ -73,7 +75,7 @@ class HomeView extends Backbone.Epoxy.View
                     }, 1000
                     element.initMap()
                 else
-                    ('body').animate {
+                    $('body').animate {
                         scrollTop: 0
                     }, 1000
                     element.$('.title-activities').text('Vaya, parece que no hay resultados...')

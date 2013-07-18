@@ -99,10 +99,11 @@
     };
 
     HomeView.prototype.searchEvents = function(event) {
-      var activity, activityDefault, date, dateDefault, element, neighborhood, neighborhoodDefault, parameters, searchUrl;
-      event.preventDefault();
+      var activity, activityDefault, date, dateDefault, element, neighborhood, neighborhoodDefault, parameters, searchUrl, target;
       element = this;
-      parameters = $('.search-form').serialize();
+      event.preventDefault();
+      target = $(event.currentTarget);
+      parameters = target.closest($('form')).serialize();
       searchUrl = "api/activity/search";
       $.ajax(searchUrl, {
         data: parameters,
@@ -114,7 +115,7 @@
             }, 1000);
             return element.initMap();
           } else {
-            'body'.animate({
+            $('body').animate({
               scrollTop: 0
             }, 1000);
             return element.$('.title-activities').text('Vaya, parece que no hay resultados...');
