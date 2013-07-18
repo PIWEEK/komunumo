@@ -78,7 +78,7 @@ class ActivityController {
         render text
     }
 
-    def activityShow(String activityId) {
+    def activityDetail(String activityId) {
         def activity
         if (activityId) {
             activity = Activity.get(activityId)

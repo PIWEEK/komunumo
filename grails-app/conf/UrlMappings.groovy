@@ -5,7 +5,7 @@ class UrlMappings {
 		name search: "/api/activity/search" {controller = 'search'; action = 'activitySearch'}
 		name activityMap: "/api/activity/map" {controller = 'activity'; action = 'activityMap'}
         name index: "/" {controller = 'index'; action = 'show'}
-        name activityShow: "/activity/show" {controller = 'activity'; action = 'activityShow'}
+        name activityDetail: "/activity/detail" {controller = 'activity'; action = 'activityDetail'}
 
 		"/login/$action?"(controller: "login")
 		"/logout/$action?"(controller: "logout")
