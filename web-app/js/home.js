@@ -75,23 +75,30 @@
     };
 
     HomeView.prototype.initDataRetriever = function() {
-      var url,
+      var searchUrl,
         _this = this;
-      url = "api/activity/search";
-      return $.get(url, function(data) {
+      searchUrl = "api/activity/search";
+      return $.get(searchUrl, function(data) {
         return _this.collection.set(data.list);
       });
     };
 
     HomeView.prototype.searchEvents = function() {
-      var activity, activityDefault, date, dateDefault, neighborhood, neighborhoodDefault;
-      console.log('Komunumo rules');
+      var activity, activityDefault, date, dateDefault, neighborhood, neighborhoodDefault, parameters, searchUrl;
+      parameters = $('.search-form').serialize();
+      searchUrl = "api/activity/search";
+      $.ajax(searchUrl, {
+        data: parameters,
+        success: function(res) {
+          return console.log(res.list);
+        }
+      });
       neighborhood = this.$el.find('.neighborhood-select option:selected').text();
       activity = this.$el.find('.activity-select option:selected').text();
       date = this.$el.find('.date-select option:selected').text();
       activityDefault = this.$el.find('.activity-select .default').text();
       neighborhoodDefault = this.$el.find('.neighborhood-select .default').text();
-      dateDefault = this.$el.find('.date-select default').text();
+      dateDefault = this.$el.find('.date-select .default').text();
       if (activity !== activityDefault) {
         this.$el.find('.title-activities .activity-search').text(activity);
       } else {
@@ -103,13 +110,10 @@
         this.$el.find('.title-activities .neigborhood-search').text('donde sea');
       }
       if (date !== dateDefault) {
-        this.$el.find('.title-activities .date-search').text(date);
+        return this.$el.find('.title-activities .date-search').text(date);
       } else {
-        this.$el.find('.title-activities .date-search').text('cuando sea');
+        return this.$el.find('.title-activities .date-search').text('cuando sea');
       }
-      return this.$el.animate({
-        scrollTop: 670
-      }, 1000);
     };
 
     return HomeView;
