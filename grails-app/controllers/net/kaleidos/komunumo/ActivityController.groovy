@@ -7,6 +7,8 @@ import groovy.time.TimeCategory
 class ActivityController {
 	static scaffold = true
 
+    def searchService
+
     def activityMap(String cat, String subcat, String kw) {
         def neighbourhoodId = cat
         def activityTypeId = subcat
