@@ -33,7 +33,9 @@ println "=> ${neighbourhood} - ${activityType} - ${startDate} - ${nextDate}"
 				between('activityDate', startDate, nextDate)
 			}
 		}
-
+println "==> ${Neighbourhood.list().id}"		
+println "========>  ${activities}"
+		
 		return activities
 	}
 }

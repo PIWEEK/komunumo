@@ -55,10 +55,11 @@ class SearchController {
 				}
 			}
 		}
+println "-------------------> ${neighbourhood} - ${activityType} - "		
 		
 		def result = searchService.activitySearch(neighbourhood, activityType, now, nextDate)
 		
 //println "===================> ${json}"		
-			return render(text:[success:error, list:result] as JSON, contentType:'text/json')
+			return render(text:[success:error, list:Activity.list()] as JSON, contentType:'text/json')
 	}
 }
