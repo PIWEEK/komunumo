@@ -21,7 +21,7 @@ class ActivityController {
             if (!activityType) {
                 activityType = null
             }
-
+        }
         if (activityDateOption) {
             use(TimeCategory) {
 				switch (activityDateOption) {
@@ -44,10 +44,9 @@ class ActivityController {
 			}
         }
 
-        //~ def activitiesList = searchService.activitySearch(neighbourhood, activityType, now, nextDate)
-        def activitiesList = Activity.list()
+        def activitiesList = searchService.activitySearch(neighbourhood, activityType, now, nextDate)
 
-        def text = 'lat\tlon\ticon\ticonSize\ticonOffset\ttitle\tdescription\tpopupSize\n'
+        String text = 'lat\tlon\ticon\ticonSize\ticonOffset\ttitle\tdescription\tpopupSize\n'
 
         activitiesList.each { activity ->
             if (activity.latitude && activity.longitude) {
@@ -59,6 +58,6 @@ class ActivityController {
             }
         }
 
-        //~ return HttpResponse(text, content_type='text/plain')
+        render text
     }
 }

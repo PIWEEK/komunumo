@@ -1,13 +1,6 @@
 class UrlMappings {
 
 	static mappings = {
-
-		"/$controller/$action?/$id?"{
-			constraints {
-				// apply constraints here
-			}
-		}
-
 		name admin: "/admin" {controller = 'admin'; action = 'scaffolding'}
 		name search: "/api/activity/search" {controller = 'search'; action = 'activitySearch'}
 		name activityMap: "/api/activity/map" {controller = 'activity'; action = 'activityMap'}
@@ -19,5 +12,10 @@ class UrlMappings {
 
 		//"/"(view:"/index")
 		"500"(view:'/error')
+        "/$controller/$action?/$id?"{
+			constraints {
+				// apply constraints here
+			}
+		}
 	}
 }
