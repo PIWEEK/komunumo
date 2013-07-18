@@ -10,39 +10,39 @@
                 <h1 class="logo text-indent">Komunumo</h1>
                 <div class="activity-search">
                     <h2>Qué hacer en el barrio</h2>
-                    <form>
+                    <form action="" class="search-form">
                         <fieldset class="neighborhood-select">
-                            <select>
+                            <select name="neighId">
                                 <option class="default selected" selected="selected">¿Qué barrio?</option>
-                                <option>Barrio 1</option>
-                                <option>Barrio 2</option>
-                                <option>Barrio 3</option>
-                                <option>Barrio 4</option>
-                                <option>Barrio 5</option>
-                                <option>Barrio 6</option>
-                                <option>Barrio 7</option>
+                                <option value="1">Barrio 1</option>
+                                <option value="2">Barrio 2</option>
+                                <option value="3">Barrio 3</option>
+                                <option value="4">Barrio 4</option>
+                                <option value="5">Barrio 5</option>
+                                <option value="6">Barrio 6</option>
+                                <option value="7">Barrio 7</option>
                             </select>
                         </fieldset>
                         <fieldset class="activity-select">
-                            <select>
+                            <select name="aTypeId">
                                 <option class="default selected" selected="selected">¿Qué actividad?</option>
-                                <option>Arte y cultura</option>
-                                <option>Deporte y aventura</option>
-                                <option>Formación</option>
-                                <option>Excursiones</option>
-                                <option>Gastronomía</option>
-                                <option>infantil</option>
-                                <option>Social</option>
-                                <option>Actividad múltiple</option>
+                                <option value="1">Arte y cultura</option>
+                                <option value="2">Deporte y aventura</option>
+                                <option value="3">Formación</option>
+                                <option value="4">Excursiones</option>
+                                <option value="5">Gastronomía</option>
+                                <option value="6">infantil</option>
+                                <option value="7">Social</option>
+                                <option value="8">Actividad múltiple</option>
                             </select>
                         </fieldset>
                         <fieldset class="date-select">
-                            <select>
+                            <select name="nextDate">
                                 <option class="default selected" selected="selected">¿Cuándo?</option>
-                                <option>Hoy</option>
-                                <option>En 3 días</option>
-                                <option>En una semana</option>
-                                <option>En un mes</option>
+                                <option value="1">Hoy</option>
+                                <option value="3">En 3 días</option>
+                                <option value="7">En una semana</option>
+                                <option value="30">En un mes</option>
                             </select>
                         </fieldset>
                         <fieldset>
@@ -116,7 +116,7 @@
                 data-initial-lon="-3.86"
                 data-initial-lat="40.38"
                 data-initial-zoom="6"
-                data-api-url="/entities-text/">
+                data-api-url="/api-activity-map">
             </div>
         </section>
 

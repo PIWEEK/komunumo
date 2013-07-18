@@ -61,6 +61,7 @@
     HomeView.prototype.initialize = function() {
       var element;
       element = this;
+      this.searchUrl = "api/activity/search";
       this.initDataRetriever();
       return $(window).scroll(function() {
         var headerHeight, scrollPosition;
@@ -75,23 +76,21 @@
     };
 
     HomeView.prototype.initDataRetriever = function() {
-      var url,
-        _this = this;
-      url = "api/activity/search";
-      return $.get(url, function(data) {
+      var _this = this;
+      return $.get(this.searchUrl, function(data) {
         return _this.collection.set(data.list);
       });
     };
 
     HomeView.prototype.searchEvents = function() {
-      var activity, activityDefault, date, dateDefault, neighborhood, neighborhoodDefault;
+      var activity, activityDefault, activityVal, date, dateDefault, dateVal, neighborhood, neighborhoodDefault, neighborhoodVal, parameters;
       console.log('Komunumo rules');
       neighborhood = this.$el.find('.neighborhood-select option:selected').text();
       activity = this.$el.find('.activity-select option:selected').text();
       date = this.$el.find('.date-select option:selected').text();
       activityDefault = this.$el.find('.activity-select .default').text();
       neighborhoodDefault = this.$el.find('.neighborhood-select .default').text();
-      dateDefault = this.$el.find('.date-select default').text();
+      dateDefault = this.$el.find('.date-select .default').text();
       if (activity !== activityDefault) {
         this.$el.find('.title-activities .activity-search').text(activity);
       } else {
@@ -107,9 +106,31 @@
       } else {
         this.$el.find('.title-activities .date-search').text('cuando sea');
       }
-      return this.$el.animate({
+      this.$el.animate({
         scrollTop: 670
       }, 1000);
+      neighborhoodVal = this.$el.find('.neighborhood-select option:selected').val();
+      activityVal = this.$el.find('.activity-select option:selected').text();
+      dateVal = this.$el.find('.date-select option:selected').text();
+      console.log($('.map'));
+      this.$el.find('.map').data('filter-category').text(neighborhoodVal);
+      this.$el.find('.map').data('filter-subcategory').text(activityVal);
+      this.$el.find('.map').data('filter-keywords').text(dateVal);
+      this.Macadjan.mapView.refresh();
+      parameters = $('.search-form').serialize();
+      return $.ajax('api', {
+        type: 'GET',
+        dataType: 'json'
+      }, parameters = parameters, {
+        success: function(data) {
+          this.collection.reset(data.list);
+          this.$el.animate({
+            scrollTop: 0
+          }, 1000);
+          this.$el.find("#activity-template").emty();
+          return this.ListItemView.initialize();
+        }
+      });
     };
 
     return HomeView;
