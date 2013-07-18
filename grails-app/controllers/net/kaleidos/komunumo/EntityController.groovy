@@ -3,7 +3,15 @@ package net.kaleidos.komunumo
 import org.springframework.dao.DataIntegrityViolationException
 import grails.plugins.springsecurity.Secured
 
-@Secured("isAuthenticated()")
 class EntityController {
-	static scaffold = true	
+	static scaffold = true
+
+    def entityDetail(String entityId) {
+        def entity
+        if (entityId) {
+            entity = Entity.get(entityId)
+        }
+
+        return render(view:'/entity', model:[entity: entity])
+    }
 }
