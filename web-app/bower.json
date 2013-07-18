@@ -6,7 +6,7 @@
     "lodash": "~1.3.1",
     "select2": "~3.4.1",
     "backbone": "~1.0.0",
-    "backbone.epoxy": "~1.0.1",
+    "backbone.epoxy": "gmac/backbone.epoxy#~1.0.1",
     "modernizr": "~2.6.2",
     "requirejs": "~2.1.8",
     "underscore": "~1.5.1"
