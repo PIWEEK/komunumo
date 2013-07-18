@@ -47,43 +47,35 @@
             <div class="container clearfix">
                 <div class="logo text-indent">Komunumo</div>
                 <form>
-                    <fieldset>
-                        <select>
-                            <option class="default selected" selected="selected">¿Qué barrio?</option>
-                            <option>Barrio 1</option>
-                            <option>Barrio 2</option>
-                            <option>Barrio 3</option>
-                            <option>Barrio 4</option>
-                            <option>Barrio 5</option>
-                            <option>Barrio 6</option>
-                            <option>Barrio 7</option>
-                        </select>
-                    </fieldset>
-                    <fieldset>
-                        <select>
-                            <option class="default selected" selected="selected">¿Qué actividad?</option>
-                            <option>Arte y cultura</option>
-                            <option>Deporte y aventura</option>
-                            <option>Formación</option>
-                            <option>Excursiones</option>
-                            <option>Gastronomía</option>
-                            <option>infantil</option>
-                            <option>Social</option>
-                            <option>Actividad múltiple</option>
-                        </select>
-                    </fieldset>
-                    <fieldset>
-                        <select>
-                            <option class="default selected" selected="selected">¿Cuándo?</option>
-                            <option>Hoy</option>
-                            <option>En 3 días</option>
-                            <option>En una semana</option>
-                            <option>En un mes</option>
-                        </select>
-                    </fieldset>
-                    <fieldset>
-                        <a href="#" class="btn" title="Busca eventos">Buscar!</a>
-                    </fieldset>
+	                <fieldset class="neighborhood-select">
+	                    <select name="neighId">
+	                        <option value="" class="default selected" selected="selected">¿Qué barrio?</option>
+	                        <g:each var="neighbourhood" in="${neigbourhoodList}" >
+	                            <option value="${neighbourhood.id}">${neighbourhood.name}</option>
+	                        </g:each>
+	                    </select>
+	                </fieldset>
+	                <fieldset class="activity-select">
+	                    <select name="aTypeId">
+	                        <option value="" class="default selected" selected="selected">¿Qué actividad?</option>
+	                        <g:each var="activityType" in="${activityTypeList}" >
+	                            <option value="${activityType.id}">${activityType.name}</option>
+	                        </g:each>
+	                    </select>
+	                </fieldset>
+	                <fieldset class="date-select">
+	                    <select name="nextDate">
+	                        <option value="" class="default selected" selected="selected">¿Cuándo?</option>
+	                        <option value="1">Hoy</option>
+	                        <option value="3">En 3 días</option>
+	                        <option value="7">En una semana</option>
+	                        <option value="30">En un mes</option>
+	                    </select>
+	                </fieldset>
+	                <fieldset>
+	                    <a href="#" class="search-event btn" title="Busca eventos">Buscar!</a>
+	                </fieldset>
+
                 </form>
             </div><!-- /container -->
         </nav>
