@@ -127,7 +127,7 @@ body {
  }
 
 /* Alt header */
- .alt-header{
+ .alt-header, .single-header{
     height: 60px;
     padding:9px 0;
     background-color:rgba(49,101,91,.8);
@@ -137,6 +137,9 @@ body {
     top: 0;
     width: 100%;
     z-index: 99;
+    &.activity-view{
+        position: relative;
+    }
     .logo{
         width: 175px;
         height: 43px;
@@ -190,214 +193,221 @@ body {
         }
     }
     .activity-list-body{
-        .single-activity{
-            width: 260px;
-            float: left;
-            margin-right: 50px;
-            margin-bottom: 50px;
-            font-family: 'Roboto Condensed', sans-serif;
-            color: @darkgray;
-            position: relative;
-            .activity-body{
-                z-index: 3;
-                .box-shadow(0 1px 10px rgba(0,0,0,.2));
-                height: 210px;
-                h3{
-                    a{
-                        text-decoration: none;
-                    }
-                    padding: 15px 15px 15px 50px;
-                    border-top: 3px solid;
-                    border-bottom: 3px solid;
-                    margin: 0;
-                }
-                .description{
-                    padding: 8px;
-                    color: darken(@lightgray, 20%);
-                    margin: 0;
-                }
-            }
-            .metadata-activity{
-                margin: 0;
-                padding: 10px;
-                list-style: none;
-                background: @lightgray;
-                .box-shadow(0 4px 3px rgba(0,0,0,.1));
-                width: 90%;
-                margin: 0 auto;
-                li{
-                    overflow: hidden;
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
-                    font-size: 16px;
-                    span{
-                        font-size: 22px;
-                    }
-                }
-            }
-            .date{
-                position: absolute;
-                top: 7px;
-                left: -10px;
-                padding: 2px 12px;
-                background: #000;
-                width: 50px;
-                overflow: hidden;
-                color: @white;
-                .text-shadow (1px 1px 0px #666);
-                text-align: center;
-                .date-day{
-                    font-size: 24px;
-                    line-height: 0;
-                }
-                .date-month{
-                     line-height: 0;
-                }
-            }
-            /* Formacion */
-            &.activity-121{
-                .activity-body{
-                    h3{
-                        border-top-color: @kdgreen;
-                        border-bottom-color: @kdgreen;
-                        a{
-                            color: @kdgreen;
-                            &:hover{
-                                color: darken(@kdgreen, 20%);
-                                .transition(all .2s ease-in);
-                            }
-                        }
-                    }
-                }
-                .date{
-                    background: @kdgreen;
-                    .text-shadow (1px 1px 0px darken(@kdgreen, 10%));
-                }
-            }
-            /* Excursiones */
-            &.activity-122{
-                .activity-body{
-                    h3{
-                        border-top-color: @korange;
-                        border-bottom-color: @korange;
-                        a{
-                            color: @korange;
-                            &:hover{
-                                color:darken(@korange, 20%);
-                                .transition(all .2s ease-in);
-                            }
-                        }
-                    }
-                }
-                .date{
-                    background: @korange;
-                    .text-shadow (1px 1px 0px darken(@korange, 10%));
-                }
-            }
-            /* Infantil */
-            &.activity-124{
-                .activity-body{
-                    h3{
-                        border-top-color: @kgreen;
-                        border-bottom-color: @kgreen;
-                        a{
-                            color: @kgreen;
-                            &:hover{
-                                color:darken(@kgreen, 20%);
-                                .transition(all .2s ease-in);
-                            }
-                        }
-                    }
-                }
-                .date{
-                    background: @kgreen;
-                    .text-shadow (1px 1px 0px darken(@kgreen, 10%));
-                }
-            }
-            /* Social */
-            &.activity-125{
-                .activity-body{
-                    h3{
-                        border-top-color: @kred;
-                        border-bottom-color: @kred;
-                        a{
-                            color: @kred;
-                            &:hover{
-                                color: darken(@kred, 20%);
-                                .transition(all .2s ease-in);
-                            }
-                        }
-                    }
-                }
-                .date{
-                    background: @kred;
-                    .text-shadow (1px 1px 0px darken(@kred, 10%));
-                }
-            }
-            /* Gastronomía */
-            &.activity-123{
-                .activity-body{
-                    h3{
-                        border-top-color: @kpurple;
-                        border-bottom-color: @kpurple;
-                        a{
-                            color: @kpurple;
-                            &:hover{
-                                color:darken(@kpurple, 20%);
-                                .transition(all .2s ease-in);
-                            }
-                        }
-                    }
-                }
-                .date{
-                    background: @kpurple;
-                    .text-shadow (1px 1px 0px darken(@kpurple, 10%));
-                }
-            }
-            /* Deporte y aventura */
-            &.activity-120{
-                .activity-body{
-                    h3{
-                        border-top-color: @kdblue;
-                        border-bottom-color: @kdblue;
-                        a{
-                            color: @kdblue;
-                            &:hover{
-                                color:darken(@kdblue, 20%);
-                                .transition(all .2s ease-in);
-                            }
-                        }
-                    }
-                }
-                .date{
-                    background: @kdblue;
-                    .text-shadow (1px 1px 0px darken(@kdblue, 10%));
-                }
-            }
-            /* Arte y cultura */
-            &.activity-119{
-                .activity-body{
-                    h3{
-                        border-top-color: @kdgray;
-                        border-bottom-color: @kdgray;
-                        a{
-                            color: @kdgray;
-                            &:hover{
-                                color: darken(@kdgray, 20%);
-                                .transition(all .2s ease-in);
-                            }
-                        }
-                    }
-                }
-                .date{
-                    background: @kdgray;
-                    .text-shadow (1px 1px 0px darken(@kdgray, 10%));
-                }
-            }
-        }
+        
     }
  }
 
+/* =================================================================
+ * SINGLE ACTIVITY
+ * ================================================================= */
+ 
+.single-activity{
+    width: 260px;
+    float: left;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: @darkgray;
+    position: relative;
+    background: @white;
+    .activity-body{
+        z-index: 3;
+        .box-shadow(0 1px 10px rgba(0,0,0,.2));
+        height: 210px;
+        h3{
+            a{
+                text-decoration: none;
+            }
+            padding: 15px 15px 15px 50px;
+            border-top: 3px solid;
+            border-bottom: 3px solid;
+            margin: 0;
+        }
+        .description{
+            padding: 8px;
+            color: darken(@lightgray, 20%);
+            margin: 0;
+        }
+    }
+    .metadata-activity{
+        margin: 0;
+        padding: 10px;
+        list-style: none;
+        background: @lightgray;
+        .box-shadow(0 4px 3px rgba(0,0,0,.1));
+        width: 90%;
+        margin: 0 auto;
+        li{
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size: 16px;
+            span{
+                font-size: 22px;
+            }
+        }
+    }
+    .date{
+        position: absolute;
+        top: 7px;
+        left: -10px;
+        padding: 2px 12px;
+        background: #000;
+        width: 50px;
+        overflow: hidden;
+        color: @white;
+        .text-shadow (1px 1px 0px #666);
+        text-align: center;
+        .date-day{
+            font-size: 24px;
+            line-height: 0;
+        }
+        .date-month{
+             line-height: 0;
+        }
+    }
+    /* Formacion */
+    &.activity-121{
+        .activity-body{
+            h3{
+                border-top-color: @kdgreen;
+                border-bottom-color: @kdgreen;
+                a{
+                    color: @kdgreen;
+                    &:hover{
+                        color: darken(@kdgreen, 20%);
+                        .transition(all .2s ease-in);
+                    }
+                }
+            }
+        }
+        .date{
+            background: @kdgreen;
+            .text-shadow (1px 1px 0px darken(@kdgreen, 10%));
+        }
+    }
+    /* Excursiones */
+    &.activity-122{
+        .activity-body{
+            h3{
+                border-top-color: @korange;
+                border-bottom-color: @korange;
+                a{
+                    color: @korange;
+                    &:hover{
+                        color:darken(@korange, 20%);
+                        .transition(all .2s ease-in);
+                    }
+                }
+            }
+        }
+        .date{
+            background: @korange;
+            .text-shadow (1px 1px 0px darken(@korange, 10%));
+        }
+    }
+    /* Infantil */
+    &.activity-124{
+        .activity-body{
+            h3{
+                border-top-color: @kgreen;
+                border-bottom-color: @kgreen;
+                a{
+                    color: @kgreen;
+                    &:hover{
+                        color:darken(@kgreen, 20%);
+                        .transition(all .2s ease-in);
+                    }
+                }
+            }
+        }
+        .date{
+            background: @kgreen;
+            .text-shadow (1px 1px 0px darken(@kgreen, 10%));
+        }
+    }
+    /* Social */
+    &.activity-125{
+        .activity-body{
+            h3{
+                border-top-color: @kred;
+                border-bottom-color: @kred;
+                a{
+                    color: @kred;
+                    &:hover{
+                        color: darken(@kred, 20%);
+                        .transition(all .2s ease-in);
+                    }
+                }
+            }
+        }
+        .date{
+            background: @kred;
+            .text-shadow (1px 1px 0px darken(@kred, 10%));
+        }
+    }
+    /* Gastronomía */
+    &.activity-123{
+        .activity-body{
+            h3{
+                border-top-color: @kpurple;
+                border-bottom-color: @kpurple;
+                a{
+                    color: @kpurple;
+                    &:hover{
+                        color:darken(@kpurple, 20%);
+                        .transition(all .2s ease-in);
+                    }
+                }
+            }
+        }
+        .date{
+            background: @kpurple;
+            .text-shadow (1px 1px 0px darken(@kpurple, 10%));
+        }
+    }
+    /* Deporte y aventura */
+    &.activity-120{
+        .activity-body{
+            h3{
+                border-top-color: @kdblue;
+                border-bottom-color: @kdblue;
+                a{
+                    color: @kdblue;
+                    &:hover{
+                        color:darken(@kdblue, 20%);
+                        .transition(all .2s ease-in);
+                    }
+                }
+            }
+        }
+        .date{
+            background: @kdblue;
+            .text-shadow (1px 1px 0px darken(@kdblue, 10%));
+        }
+    }
+    /* Arte y cultura */
+    &.activity-119{
+        .activity-body{
+            h3{
+                border-top-color: @kdgray;
+                border-bottom-color: @kdgray;
+                a{
+                    color: @kdgray;
+                    &:hover{
+                        color: darken(@kdgray, 20%);
+                        .transition(all .2s ease-in);
+                    }
+                }
+            }
+        }
+        .date{
+            background: @kdgray;
+            .text-shadow (1px 1px 0px darken(@kdgray, 10%));
+        }
+    }
+}
+        
 /* =================================================================
  * MAP
  * ================================================================= */
@@ -406,6 +416,61 @@ body {
     height: 450px;
     margin-bottom: 40px;
  }
+ 
+/* ================================================================
+ * ACTIVITIES LIST
+ * =============================================================== */
+
+.activity-view{
+    &.single-header{
+        position: relative;
+        .logo{
+            a{
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+.activity-view-body{
+    .title{
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 40px;
+        color: @darkgreen;
+        margin-bottom: 0;
+        /*text-shadow: 1px 1px 0px darken(@darkgreen, 5%);*/
+    }
+    .activity-metadata{
+        width: 100%;
+        padding: 10px;
+        color: #666;
+        list-style: none;
+        background: #d8e0e4;
+    }
+    .description{
+        width: 633px;
+        color: @darkgray;
+    }
+    .map{
+        width: 270px;
+        .map-block{
+            width: 100%;
+            height: 540px;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.related-activities{
+    .title{
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 20px;
+        color: @darkgreen;
+        /*text-shadow: 1px 1px 0px darken(@darkgreen, 5%);*/
+    }
+}
 
 /* ================================================================
  * FOOTER
