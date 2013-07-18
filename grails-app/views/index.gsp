@@ -133,7 +133,7 @@
                             {{ place }}
                         </li>
                         <li class="activity-type">
-                            <span class="typcn typcn-wine"></span>
+                            <span class="typcn typcn-ico-{{ activityTypeId }}"></span>
                             {{ activityTypeName }}
                         </li>
                     </ul>
