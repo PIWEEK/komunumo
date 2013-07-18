@@ -130,7 +130,9 @@
         <script type="text/template" id="activity-template">
                 <div class="single-activity activity-{{ activityTypeId }}">
                     <div class="activity-body">
-                        <h3>{{name}}</h3>
+                        <h3>
+                            <a href="{{ url }}" title="{{name}}">{{name}}</a>
+                        </h3>
                         <p class="description">{{ description }}</p>
                     </div>
                     <ul class="metadata-activity">
@@ -144,7 +146,8 @@
                         </li>
                     </ul>
                     <div class="date">
-                        {{ activityDate }}
+                        <span class="date-day">{{ activityDayDate }}</span>
+                        <span class="date-month">{{ activityDayMonth }}</span>
                     </div>
                 </div>
 

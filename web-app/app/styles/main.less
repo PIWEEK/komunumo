@@ -199,6 +199,9 @@ body {
                 .box-shadow(0 1px 10px rgba(0,0,0,.2));
                 height: 210px;
                 h3{
+                    a{
+                        text-decoration: none;
+                    }
                     padding: 15px 15px 15px 50px;
                     border-top: 3px solid;
                     border-bottom: 3px solid;
@@ -230,14 +233,162 @@ body {
             }
             .date{
                 position: absolute;
-                top: 10px;
+                top: 8px;
                 left: -10px;
-                padding: 8px 12px;
+                padding: 2px 12px;
                 background: #000;
                 width: 50px;
                 overflow: hidden;
                 color: @white;
                 .text-shadow (1px 1px 0px #666);
+                text-align: center;
+                .date-day{
+                    font-size: 24px;
+                    line-height: 0;
+                }
+                .date-month{
+                     line-height: 0;
+                }
+            }
+            /* Formacion */
+            &.activity-121{
+                .activity-body{
+                    h3{
+                        border-top-color: @kdgreen;
+                        border-bottom-color: @kdgreen;
+                        a{
+                            color: @kdgreen;
+                            &:hover{
+                                color: darken(@kdgreen, 20%);
+                                .transition(all .2s ease-in);
+                            }
+                        }
+                    }
+                }
+                .date{
+                    background: @kdgreen;
+                    .text-shadow (1px 1px 0px darken(@kdgreen, 10%));
+                }
+            }
+            /* Excursiones */
+            &.activity-122{
+                .activity-body{
+                    h3{
+                        border-top-color: @korange;
+                        border-bottom-color: @korange;
+                        a{
+                            color: @korange;
+                            &:hover{
+                                color:darken(@korange, 20%);
+                                .transition(all .2s ease-in);
+                            }
+                        }
+                    }
+                }
+                .date{
+                    background: @korange;
+                    .text-shadow (1px 1px 0px darken(@korange, 10%));
+                }
+            }
+            /* Infantil */
+            &.activity-124{
+                .activity-body{
+                    h3{
+                        border-top-color: @kgreen;
+                        border-bottom-color: @kgreen;
+                        a{
+                            color: @kgreen;
+                            &:hover{
+                                color:darken(@kgreen, 20%);
+                                .transition(all .2s ease-in);
+                            }
+                        }
+                    }
+                }
+                .date{
+                    background: @kgreen;
+                    .text-shadow (1px 1px 0px darken(@kgreen, 10%));
+                }
+            }
+            /* Social */
+            &.activity-125{
+                .activity-body{
+                    h3{
+                        border-top-color: @kred;
+                        border-bottom-color: @kred;
+                        a{
+                            color: @kred;
+                            &:hover{
+                                color: darken(@kred, 20%);
+                                .transition(all .2s ease-in);
+                            }
+                        }
+                    }
+                }
+                .date{
+                    background: @kred;
+                    .text-shadow (1px 1px 0px darken(@kred, 10%));
+                }
+            }
+            /* Gastronomía */
+            &.activity-123{
+                .activity-body{
+                    h3{
+                        border-top-color: @kpurple;
+                        border-bottom-color: @kpurple;
+                        a{
+                            color: @kpurple;
+                            &:hover{
+                                color:darken(@kpurple, 20%);
+                                .transition(all .2s ease-in);
+                            }
+                        }
+                    }
+                }
+                .date{
+                    background: @kpurple;
+                    .text-shadow (1px 1px 0px darken(@kpurple, 10%));
+                }
+            }
+            /* Deporte y aventura */
+            &.activity-120{
+                .activity-body{
+                    h3{
+                        border-top-color: @kdblue;
+                        border-bottom-color: @kdblue;
+                        a{
+                            color: @kdblue;
+                            &:hover{
+                                color:darken(@kdblue, 20%);
+                                .transition(all .2s ease-in);
+                            }
+                        }
+                    }
+                }
+                .date{
+                    background: @kdblue;
+                    .text-shadow (1px 1px 0px darken(@kdblue, 10%));
+                }
+            }
+            /* Arte y cultura */
+            &.activity-119{
+                .activity-body{
+                    h3{
+                        border-top-color: @kdgray;
+                        border-bottom-color: @kdgray;
+                        a{
+                            color: @kdgray;
+                            &:hover{
+                                color: darken(@kdgray, 20%);
+                                .transition(all .2s ease-in);
+                            }
+                        }
+                    }
+                }
+                .date{
+                    background: @kdgray;
+                    .text-shadow (1px 1px 0px darken(@kdgray, 10%));
+                }
             }
         }
     }

@@ -64,8 +64,9 @@ class HomeView extends Backbone.Epoxy.View
         $.ajax searchUrl,
             data :
                 parameters
-            success  : (res) ->
+            success : (res) ->
                 element.collection.reset(res.list)
+                
                 if element.collection.length > 0
                     $('body').animate {
                         scrollTop: 670
