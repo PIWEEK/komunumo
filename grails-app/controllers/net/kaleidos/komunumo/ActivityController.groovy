@@ -84,7 +84,7 @@ class ActivityController {
             activity = Activity.get(activityId)
         }
 
-        return render(view:'/activity', model:[activity: activity])
+        return render(view:'/activity', model:[activity: activity, neigbourhoodList: Neighbourhood.list(), activityTypeList: ActivityType.list()])
     }
 
     def activityDetailMap(String activityId) {
