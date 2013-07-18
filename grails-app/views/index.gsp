@@ -101,13 +101,13 @@
 
         <section class="map">
             <div id="map-block" class="map-block"
-                data-filter-category=""
-                data-filter-subcategory=""
-                data-filter-keywords=""
+                data-filter-category="1"
+                data-filter-subcategory="1"
+                data-filter-keywords="1"
                 data-initial-lon="-3.86"
                 data-initial-lat="40.38"
-                data-initial-zoom="6"
-                data-api-url="/api/activity/map">
+                data-initial-zoom="11"
+                data-api-url="api/activity/map">
             </div>
         </section>
 
@@ -120,15 +120,15 @@
         <script src="app/bower_components/underscore/underscore.js"></script>
         <script src="app/bower_components/backbone/backbone.js"></script>
         <script src="app/bower_components/backbone.epoxy/backbone.epoxy.min.js"></script>
+        <script src="js/openlayers/OpenLayers.js"></script>
+        <script src="js/map.js"></script>
         <script src="js/main.js"></script>
         <script src="js/home.js"></script>
         <script src="js/model/home.js"></script>
-        <script src="js/openlayers/OpenLayers.js"></script>
-        <script src="js/map.js"></script>
         <!-- endbuild -->
 
         <script type="text/template" id="activity-template">
-                <div class="single-activity {{ activityType.class }}">
+                <div class="single-activity activity-{{ activityTypeId }}">
                     <div class="activity-body">
                         <h3>{{name}}</h3>
                         <p class="description">{{ description }}</p>
@@ -140,7 +140,7 @@
                         </li>
                         <li class="activity-type">
                             <span class="typcn typcn-wine"></span>
-                            {{ activityType.class }}
+                            {{ activityTypeName }}
                         </li>
                     </ul>
                     <div class="date">

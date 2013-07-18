@@ -25,9 +25,9 @@ class HomeView extends Backbone.Epoxy.View
         element = @
         
         @initDataRetriever()
-        @initMap()
+        @scrollWatcher()
 
-        #Scroll watcher
+    scrollWatcher: ->
         $(window).scroll ->
             headerHeight = $('.home-header').height()
             scrollPosition = $(window).scrollTop()
@@ -36,27 +36,24 @@ class HomeView extends Backbone.Epoxy.View
             else
                 $(".alt-header").fadeOut("fast");
 
-        
-        
     initDataRetriever: ->
         searchUrl = "api/activity/search"
         $.get searchUrl, (data) =>
             @collection.set(data.list)
 
     initMap: ->
-        #
         #Update Map
-        #neighborhoodVal = @$el.find('.neighborhood-select option:selected').val()
-        #activityVal = @$el.find('.activity-select option:selected').text()
-        #dateVal = @$el.find('.date-select option:selected').text()
+        neighborhoodVal = @$el.find('.neighborhood-select option:selected').val()
+        activityVal = @$el.find('.activity-select option:selected').val()
+        dateVal = @$el.find('.date-select option:selected').val()
         
-        #console.log $('.map');
-        #@$el.find('.map').data('filter-category').value(neighborhoodVal)
-        #@$el.find('.map').data('filter-subcategory').value(activityVal)
-        #@$el.find('.map').data('filter-keywords').value(dateVal)
-
-        #@Macadjan.mapView.refresh()
-        ##
+        map = @$el.find('.map-block');
+        
+        map.data('filter-category', neighborhoodVal)
+        map.data('filter-subcategory', activityVal)
+        map.data('filter-keywords', dateVal)
+        
+        #trigger('macadjan:refresh')
 
     searchEvents: ->
     
@@ -69,11 +66,11 @@ class HomeView extends Backbone.Epoxy.View
                 parameters
             success  : (res) ->
                 element.collection.reset(res.list)
-                console.log element.collection
                 if element.collection.length > 0
                     $('body').animate {
                         scrollTop: 670
                     }, 1000
+                    element.initMap()
                 else
                     element.$('.title-activities').text('Vaya, parece que no hay resultados...')
 

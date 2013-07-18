@@ -62,7 +62,10 @@
       var element;
       element = this;
       this.initDataRetriever();
-      this.initMap();
+      return this.scrollWatcher();
+    };
+
+    HomeView.prototype.scrollWatcher = function() {
       return $(window).scroll(function() {
         var headerHeight, scrollPosition;
         headerHeight = $('.home-header').height();
@@ -84,7 +87,16 @@
       });
     };
 
-    HomeView.prototype.initMap = function() {};
+    HomeView.prototype.initMap = function() {
+      var activityVal, dateVal, map, neighborhoodVal;
+      neighborhoodVal = this.$el.find('.neighborhood-select option:selected').val();
+      activityVal = this.$el.find('.activity-select option:selected').val();
+      dateVal = this.$el.find('.date-select option:selected').val();
+      map = this.$el.find('.map-block');
+      map.data('filter-category', neighborhoodVal);
+      map.data('filter-subcategory', activityVal);
+      return map.data('filter-keywords', dateVal);
+    };
 
     HomeView.prototype.searchEvents = function() {
       var activity, activityDefault, date, dateDefault, element, neighborhood, neighborhoodDefault, parameters, searchUrl;
@@ -95,11 +107,11 @@
         data: parameters,
         success: function(res) {
           element.collection.reset(res.list);
-          console.log(element.collection);
           if (element.collection.length > 0) {
-            return $('body').animate({
+            $('body').animate({
               scrollTop: 670
             }, 1000);
+            return element.initMap();
           } else {
             return element.$('.title-activities').text('Vaya, parece que no hay resultados...');
           }
