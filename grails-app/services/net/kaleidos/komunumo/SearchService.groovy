@@ -45,7 +45,7 @@ class SearchService {
 		def result = []
 		activityList.each  { activity ->
 			def threeLettersMonth =  new DateFormatSymbols().getMonths()[activity.activityDate.format("MM").toInteger()][0..2]
-			def activityDetail = g.createLink(mapping: 'activityShow', params: [id: activity.id], absolute: "true")
+			def activityDetail = g.createLink(mapping: 'activityDetail', params: [id: activity.id], absolute: "true")
 			
 			result << [
 				'id' : activity.id,
