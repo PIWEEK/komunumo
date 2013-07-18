@@ -4,11 +4,14 @@ import org.springframework.dao.DataIntegrityViolationException
 import grails.plugins.springsecurity.Secured
 import groovy.time.TimeCategory
 
-@Secured("isAuthenticated()")
 class ActivityController {
 	static scaffold = true
 
-    def activityMap(String neighbourhoodId, String activityTypeId, String activityDateOption) {
+    def activityMap(String cat, String subcat, String kw) {
+        def neighbourhoodId = cat
+        def activityTypeId = subcat
+        def activityDateOption = kw
+
         if (neighbourhoodId) {
             neighbourhood = Neighbourhood.get(neighbourhoodId)
             if (!neighbourhood) {
