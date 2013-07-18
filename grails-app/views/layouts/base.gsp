@@ -10,19 +10,22 @@
 		<title><g:layoutTitle default="Komunumo"/></title>
         <meta name="description" content="">
 		<link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon">
-        
+
 		<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
 
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="app/bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
-        
+
 		<g:layoutHead/>
 		<r:layoutResources />
 	</head>
 	<body data-view="${dataView}">
         <g:layoutBody/>
-		<div class="footer" role="contentinfo"></div>
+		<div class="footer" role="contentinfo">
+            <div class="logo text-indent">Komunumo</div>
+            <div class="logo-piweek text-indent">Piweek</div>
+        </div>
         <script src="app/bower_components/jquery/jquery.js"></script>
         <script src="app/bower_components/underscore/underscore.js"></script>
         <script src="app/bower_components/backbone/backbone.js"></script>

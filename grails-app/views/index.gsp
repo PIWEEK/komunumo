@@ -102,17 +102,11 @@
                     Busco <span class="activity-search">gastronomía</span> <span class="neigborhood-search">en guindalera</span> <span class="date-search">hoy</span>
                 </p>
             </div><!-- /container -->
-            
-            <div class="container activity-list-body">
+
+            <div class="container activity-list-body clearfix">
                 <div data-bind="collection:$collection"></div>
             </div>
-
-            
         </section><!-- body home -->
-        <footer class="home-footer clearfix">
-            <div class="logo text-indent">Komunumo</div>
-            <div class="logo-piweek text-indent">Piweek</div>
-        </footer><!-- body home -->
 
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
@@ -148,8 +142,8 @@
                         {{ activityDate }}
                     </div>
                 </div>
-            
+
         </script>
-        
+
     </body>
 </html>
