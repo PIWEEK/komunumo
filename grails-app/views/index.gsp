@@ -120,6 +120,8 @@
         <script src="js/main.js"></script>
         <script src="js/home.js"></script>
         <script src="js/model/home.js"></script>
+        <script src="js/openlayers/OpenLayers.js"></script>
+        <script src="js/maps.js"></script>
         <!-- endbuild -->
 
         <script type="text/template" id="activity-template">
