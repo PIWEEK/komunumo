@@ -82,7 +82,10 @@
         <section class="home-body">
             <div class="container activity-list">
                 <p class="title-activities">
-                    Busco <span class="activity-search">gastronomía</span> <span class="neigborhood-search">en guindalera</span> <span class="date-search">hoy</span>
+                    <span class="search-text">¿Qué buscas?</span>
+                    <span class="activity-search-text"></span>
+                    <span class="neigborhood-search-text"></span>
+                    <span class="date-search-text"></span>
                 </p>
             </div><!-- /container -->
 
@@ -106,18 +109,6 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-
-        <!-- Compiled scripts -->
-        <script src="app/bower_components/jquery/jquery.js"></script>
-        <script src="app/bower_components/underscore/underscore.js"></script>
-        <script src="app/bower_components/backbone/backbone.js"></script>
-        <script src="app/bower_components/backbone.epoxy/backbone.epoxy.min.js"></script>
-        <script src="js/openlayers/OpenLayers.js"></script>
-        <script src="js/map.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/home.js"></script>
-        <script src="js/model/home.js"></script>
-        <!-- endbuild -->
 
         <script type="text/template" id="activity-template">
                 <div class="single-activity activity-{{ activityTypeId }}">
@@ -144,6 +135,17 @@
                 </div>
 
         </script>
+
+        <!-- Compiled scripts -->
+        <script src="app/bower_components/jquery/jquery.js"></script>
+        <script src="app/bower_components/underscore/underscore.js"></script>
+        <script src="app/bower_components/backbone/backbone.js"></script>
+        <script src="app/bower_components/backbone.epoxy/backbone.epoxy.min.js"></script>
+        <script src="js/openlayers/OpenLayers.js"></script>
+        <script src="js/map.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/home.js"></script>
+        <!-- endbuild -->
 
     </body>
 </html>

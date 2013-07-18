@@ -72,36 +72,16 @@ class HomeView extends Backbone.Epoxy.View
                 if element.collection.length > 0
                     $('body').animate {
                         scrollTop: 670
-                    }, 1000
-                    element.initMap()
+                    }, 1000, ->
+                        element.$('.activity-search').find('.no-results').remove()
+                        element.find('.search-text').text('Busco')
+                        element.initMap()
                 else
                     $('body').animate {
                         scrollTop: 0
-                    }, 1000
-                    element.$('.title-activities').text('Vaya, parece que no hay resultados...')
+                    }, 1000, ->
+                        element.$('.activity-search').find('.no-results').remove()
+                        element.$('.activity-search').append('<p class="no-results hidden">Vaya, parece que no hay resultados...</p>').fadeIn()
 
-        #Text on select
-        neighborhood = @$el.find('.neighborhood-select option:selected').text()
-        activity = @$el.find('.activity-select option:selected').text()
-        date = @$el.find('.date-select option:selected').text()
         
-        activityDefault = @$el.find('.activity-select .default').text()
-        neighborhoodDefault = @$el.find('.neighborhood-select .default').text()
-        dateDefault = @$el.find('.date-select .default').text()
-
-        if activity != activityDefault
-            @$el.find('.title-activities .activity-search').text(activity)
-        else
-            @$el.find('.title-activities .activity-search').text('')
-
-        if neighborhood != neighborhoodDefault
-            @$el.find('.title-activities .neigborhood-search').text('en ' + neighborhood)
-        else
-            @$el.find('.title-activities .neigborhood-search').text('')
-
-        if date != dateDefault
-            @$el.find('.title-activities .date-search').text(date)
-        else
-            @$el.find('.title-activities .date-search').text('')
-            
 homeView = new HomeView

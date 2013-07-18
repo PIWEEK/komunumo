@@ -99,50 +99,34 @@
     };
 
     HomeView.prototype.searchEvents = function(event) {
-      var activity, activityDefault, date, dateDefault, element, neighborhood, neighborhoodDefault, parameters, searchUrl, target;
+      var element, parameters, searchUrl, target;
       element = this;
       event.preventDefault();
       target = $(event.currentTarget);
       parameters = target.closest($('form')).serialize();
       searchUrl = "api/activity/search";
-      $.ajax(searchUrl, {
+      return $.ajax(searchUrl, {
         data: parameters,
         success: function(res) {
           element.collection.reset(res.list);
           if (element.collection.length > 0) {
-            $('body').animate({
+            return $('body').animate({
               scrollTop: 670
-            }, 1000);
-            return element.initMap();
+            }, 1000, function() {
+              element.$('.activity-search').find('.no-results').remove();
+              element.find('.search-text').text('Busco');
+              return element.initMap();
+            });
           } else {
-            $('body').animate({
+            return $('body').animate({
               scrollTop: 0
-            }, 1000);
-            return element.$('.title-activities').text('Vaya, parece que no hay resultados...');
+            }, 1000, function() {
+              element.$('.activity-search').find('.no-results').remove();
+              return element.$('.activity-search').append('<p class="no-results hidden">Vaya, parece que no hay resultados...</p>').fadeIn();
+            });
           }
         }
       });
-      neighborhood = this.$el.find('.neighborhood-select option:selected').text();
-      activity = this.$el.find('.activity-select option:selected').text();
-      date = this.$el.find('.date-select option:selected').text();
-      activityDefault = this.$el.find('.activity-select .default').text();
-      neighborhoodDefault = this.$el.find('.neighborhood-select .default').text();
-      dateDefault = this.$el.find('.date-select .default').text();
-      if (activity !== activityDefault) {
-        this.$el.find('.title-activities .activity-search').text(activity);
-      } else {
-        this.$el.find('.title-activities .activity-search').text('');
-      }
-      if (neighborhood !== neighborhoodDefault) {
-        this.$el.find('.title-activities .neigborhood-search').text('en ' + neighborhood);
-      } else {
-        this.$el.find('.title-activities .neigborhood-search').text('');
-      }
-      if (date !== dateDefault) {
-        return this.$el.find('.title-activities .date-search').text(date);
-      } else {
-        return this.$el.find('.title-activities .date-search').text('');
-      }
     };
 
     return HomeView;
