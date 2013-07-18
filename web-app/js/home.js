@@ -98,8 +98,9 @@
       return map.data('filter-keywords', dateVal);
     };
 
-    HomeView.prototype.searchEvents = function() {
+    HomeView.prototype.searchEvents = function(event) {
       var activity, activityDefault, date, dateDefault, element, neighborhood, neighborhoodDefault, parameters, searchUrl;
+      event.preventDefault();
       element = this;
       parameters = $('.search-form').serialize();
       searchUrl = "api/activity/search";
@@ -113,6 +114,9 @@
             }, 1000);
             return element.initMap();
           } else {
+            'body'.animate({
+              scrollTop: 0
+            }, 1000);
             return element.$('.title-activities').text('Vaya, parece que no hay resultados...');
           }
         }
@@ -126,17 +130,17 @@
       if (activity !== activityDefault) {
         this.$el.find('.title-activities .activity-search').text(activity);
       } else {
-        this.$el.find('.title-activities .activity-search').text('lo que sea');
+        this.$el.find('.title-activities .activity-search').text('');
       }
       if (neighborhood !== neighborhoodDefault) {
         this.$el.find('.title-activities .neigborhood-search').text('en ' + neighborhood);
       } else {
-        this.$el.find('.title-activities .neigborhood-search').text('donde sea');
+        this.$el.find('.title-activities .neigborhood-search').text('');
       }
       if (date !== dateDefault) {
         return this.$el.find('.title-activities .date-search').text(date);
       } else {
-        return this.$el.find('.title-activities .date-search').text('cuando sea');
+        return this.$el.find('.title-activities .date-search').text('');
       }
     };
 

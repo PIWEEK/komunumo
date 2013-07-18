@@ -54,9 +54,9 @@ class HomeView extends Backbone.Epoxy.View
         map.data('filter-keywords', dateVal)
         
         #trigger('macadjan:refresh')
-
-    searchEvents: ->
-    
+ 
+    searchEvents: (event) ->
+        event.preventDefault()
         element = @
         parameters = $('.search-form').serialize()
         searchUrl = "api/activity/search"
@@ -73,12 +73,16 @@ class HomeView extends Backbone.Epoxy.View
                     }, 1000
                     element.initMap()
                 else
+                    ('body').animate {
+                        scrollTop: 0
+                    }, 1000
                     element.$('.title-activities').text('Vaya, parece que no hay resultados...')
 
         #Text on select
         neighborhood = @$el.find('.neighborhood-select option:selected').text()
         activity = @$el.find('.activity-select option:selected').text()
         date = @$el.find('.date-select option:selected').text()
+        
         activityDefault = @$el.find('.activity-select .default').text()
         neighborhoodDefault = @$el.find('.neighborhood-select .default').text()
         dateDefault = @$el.find('.date-select .default').text()
@@ -86,16 +90,16 @@ class HomeView extends Backbone.Epoxy.View
         if activity != activityDefault
             @$el.find('.title-activities .activity-search').text(activity)
         else
-            @$el.find('.title-activities .activity-search').text('lo que sea')
+            @$el.find('.title-activities .activity-search').text('')
 
         if neighborhood != neighborhoodDefault
             @$el.find('.title-activities .neigborhood-search').text('en ' + neighborhood)
         else
-            @$el.find('.title-activities .neigborhood-search').text('donde sea')
+            @$el.find('.title-activities .neigborhood-search').text('')
 
         if date != dateDefault
             @$el.find('.title-activities .date-search').text(date)
         else
-            @$el.find('.title-activities .date-search').text('cuando sea')
+            @$el.find('.title-activities .date-search').text('')
             
 homeView = new HomeView

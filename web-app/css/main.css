@@ -2454,6 +2454,48 @@ cite {
 
 /* '' */
 
+.typcn-ico-119::before {
+  content: '\e0b2';
+}
+
+/* '' | Arte y cultura */
+
+.typcn-ico-120::before {
+  content: '\e0f4';
+}
+
+/* '' | Deporte y aventura */
+
+.typcn-ico-121::before {
+  content: '\e0f0';
+}
+
+/* '' | Formacion */
+
+.typcn-ico-122::before {
+  content: '\e09b';
+}
+
+/* '' | Excursiones */
+
+.typcn-ico-123::before {
+  content: '\e12b';
+}
+
+/* '' | gastronomía*/
+
+.typcn-ico-124::before {
+  content: '\e0c7';
+}
+
+/* ''  | Infantil */
+
+.typcn-ico-125::before {
+  content: '\e08f';
+}
+
+/* '' | Social */
+
 /* Colors */
 
 /* ===============================================================
@@ -2851,7 +2893,12 @@ body {
 .home-body .activity-list .title-activities {
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 40px;
+  color: #999;
   text-shadow: 1px 1px 0px #333333;
+}
+
+.home-body .activity-list .title-activities .activity-search,
+.home-body .activity-list .title-activities .date-search {
   text-transform: lowercase;
 }
 
