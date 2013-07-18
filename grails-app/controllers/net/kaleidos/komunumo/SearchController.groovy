@@ -9,60 +9,63 @@ class SearchController {
 	
 	def searchService
 
-    def activitySearch() {
+    def activitySearch(String neighId, String aTypeId, String nextDate) {
 		
 		def success = true
 		
 		def neighbourhood = null
-		if (params.neighId) {
-			neighbourhood = Neighbourhood.get(params.neighId)
+		if (neighId) {
+			neighbourhood = Neighbourhood.get(neighId)
 			if (!neighbourhood) {
 				success = false
 			} 
 		}
 		
 		def activityType = null
-		if (params.aTypeId) {
-			activityType = ActivityType.get(params.aTypeId)
+		if (aTypeId) {
+			activityType = ActivityType.get(aTypeId)
 			if (!activityType) {
 				success = false
 			}
 		}
 		
-		def nextDate, realNow, now
+		def endDate, realNow, now
 
-		if (params.nextDate) {
+		if (nextDate) {
+			
 			realNow = new Date()
 			now = realNow.clearTime()
 			
 			use(TimeCategory) {				
-				switch (params.neighId) {
-				case 0:
-					nextDate = now + 1.days
+				switch (nextDate) {
+				case "0":
+					endDate = now + 1.days
 					break;
-				case 1:
-					nextDate = now + 2.days		
+				case "1":
+					endDate = now + 2.days		
 					break;	
-				case 3:
-					nextDate = now + 4.days		
+				case "3":
+					endDate = now + 4.days		
 					break;
-				case 7:
-					nextDate = now + 1.week + 1.day
+				case "7":
+					endDate = now + 1.week + 1.day
 					break;
-				case 30:
-					nextDate = now + 1.months + 1.day
+				case "30":
+					endDate = now + 1.months + 1.day
 					break;
 				default:
-					success = false
+					realNow = null
+					endDate = null
 					break;
 				}
 			}
 		}
 		
-		def result = searchService.activitySearch(neighbourhood, activityType, realNow, nextDate)
-		
-println "-------------------> ${neighbourhood} - ${activityType} - ${realNow} - ${nextDate} - ${success}"		
-		
+		def result = searchService.activitySearch(neighbourhood, activityType, realNow, endDate)
+		if (success) {
 			return render(text:[success:success, list:result] as JSON, contentType:'text/json')
+		} else {
+		return render(text:[success:success, list:[]] as JSON, contentType:'text/json')
+		}
 	}
 }
