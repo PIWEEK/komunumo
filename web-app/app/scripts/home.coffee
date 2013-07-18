@@ -25,7 +25,6 @@ class HomeView extends Backbone.Epoxy.View
         element = @
         #Arguments
         #?neighId=2&aTypeId=3&nextDate=30
-        @searchUrl = "api/activity/search"
         
         @initDataRetriever()
 
@@ -43,11 +42,26 @@ class HomeView extends Backbone.Epoxy.View
         
         
     initDataRetriever: ->
-        $.get @searchUrl, (data) =>
+        searchUrl = "api/activity/search"
+        $.get searchUrl, (data) =>
             @collection.set(data.list)
 
     searchEvents: ->
-        console.log 'Komunumo rules'
+
+        #UpdateSearch
+        parameters = $('.search-form').serialize()
+        searchUrl = "api/activity/search"
+
+        $.ajax searchUrl,
+            data :
+                parameters
+            success  : (res) ->
+                console.log res.list
+                #@collection.reset(data.list)
+                #@$el.animate({ scrollTop: 670 }, 1000);
+                #@$el.find("#activity-template").emty()
+                #@ListItemView.initialize()
+                
 
         #Text on select
         neighborhood = @$el.find('.neighborhood-select option:selected').text()
@@ -72,34 +86,18 @@ class HomeView extends Backbone.Epoxy.View
         else
             @$el.find('.title-activities .date-search').text('cuando sea')
 
-        #Animate Scroll
-        @$el.animate({ scrollTop: 670 }, 1000);
-
+        #
         #Update Map
-        neighborhoodVal = @$el.find('.neighborhood-select option:selected').val()
-        activityVal = @$el.find('.activity-select option:selected').text()
-        dateVal = @$el.find('.date-select option:selected').text()
+        #neighborhoodVal = @$el.find('.neighborhood-select option:selected').val()
+        #activityVal = @$el.find('.activity-select option:selected').text()
+        #dateVal = @$el.find('.date-select option:selected').text()
         
-        console.log $('.map');
-        @$el.find('.map').data('filter-category').text(neighborhoodVal)
-        @$el.find('.map').data('filter-subcategory').text(activityVal)
-        @$el.find('.map').data('filter-keywords').text(dateVal)
+        #console.log $('.map');
+        #@$el.find('.map').data('filter-category').value(neighborhoodVal)
+        #@$el.find('.map').data('filter-subcategory').value(activityVal)
+        #@$el.find('.map').data('filter-keywords').value(dateVal)
 
-        @Macadjan.mapView.refresh()
-
-        #UpdateSearch
-        parameters = $('.search-form').serialize()
-
-        $.ajax 'api',
-            type: 'GET'
-            dataType: 'json'
-            parameters = parameters
-            success: (data) ->
-                @collection.reset(data.list)
-                @$el.animate({ scrollTop: 0 }, 1000);
-                @$el.find("#activity-template").emty()
-                @ListItemView.initialize()
-
+        #@Macadjan.mapView.refresh()
+        ##
             
-
 homeView = new HomeView

@@ -13,7 +13,7 @@
                     <form action="" class="search-form">
                         <fieldset class="neighborhood-select">
                             <select name="neighId">
-                                <option class="default selected" selected="selected">¿Qué barrio?</option>
+                                <option value="" class="default selected" selected="selected">¿Qué barrio?</option>
                                 <option value="1">Barrio 1</option>
                                 <option value="2">Barrio 2</option>
                                 <option value="3">Barrio 3</option>
@@ -25,7 +25,7 @@
                         </fieldset>
                         <fieldset class="activity-select">
                             <select name="aTypeId">
-                                <option class="default selected" selected="selected">¿Qué actividad?</option>
+                                <option value="" class="default selected" selected="selected">¿Qué actividad?</option>
                                 <option value="1">Arte y cultura</option>
                                 <option value="2">Deporte y aventura</option>
                                 <option value="3">Formación</option>
@@ -38,7 +38,7 @@
                         </fieldset>
                         <fieldset class="date-select">
                             <select name="nextDate">
-                                <option class="default selected" selected="selected">¿Cuándo?</option>
+                                <option value="" class="default selected" selected="selected">¿Cuándo?</option>
                                 <option value="1">Hoy</option>
                                 <option value="3">En 3 días</option>
                                 <option value="7">En una semana</option>
