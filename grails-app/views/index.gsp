@@ -14,26 +14,17 @@
                         <fieldset class="neighborhood-select">
                             <select name="neighId">
                                 <option value="" class="default selected" selected="selected">¿Qué barrio?</option>
-                                <option value="1">Barrio 1</option>
-                                <option value="2">Barrio 2</option>
-                                <option value="3">Barrio 3</option>
-                                <option value="4">Barrio 4</option>
-                                <option value="5">Barrio 5</option>
-                                <option value="6">Barrio 6</option>
-                                <option value="7">Barrio 7</option>
+                                <g:each var="neighbourhood" in="${neigbourhoodList}" >
+                                    <option value="${neighbourhood.id}">${neighbourhood.name}</option>
+                                </g:each>
                             </select>
                         </fieldset>
                         <fieldset class="activity-select">
                             <select name="aTypeId">
                                 <option value="" class="default selected" selected="selected">¿Qué actividad?</option>
-                                <option value="1">Arte y cultura</option>
-                                <option value="2">Deporte y aventura</option>
-                                <option value="3">Formación</option>
-                                <option value="4">Excursiones</option>
-                                <option value="5">Gastronomía</option>
-                                <option value="6">infantil</option>
-                                <option value="7">Social</option>
-                                <option value="8">Actividad múltiple</option>
+                                <g:each var="activityType" in="${activityTypeList}" >
+                                    <option value="${activityType.id}">${activityType.name}</option>
+                                </g:each>
                             </select>
                         </fieldset>
                         <fieldset class="date-select">

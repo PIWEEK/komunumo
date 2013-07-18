@@ -7,6 +7,6 @@ import grails.plugins.springsecurity.Secured
 class IndexController {
 
     def show() {
-		 render view:'/index', model:[dataView: 'HomeView', neigbourhoodList: Neighbourhood.list(), activityList: ActivityType.list()]
+		 render view:'/index', model:[dataView: 'HomeView', neigbourhoodList: Neighbourhood.list(), activityTypeList: ActivityType.list()]
 	}
 }
