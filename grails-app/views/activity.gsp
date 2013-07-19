@@ -88,7 +88,9 @@
             <div class="single-activity activity-${activity.activityType.id}">
                 <div class="activity-body">
                     <h3>
-                        <a href="#" title="Monta tu propio huerto">${activity.name}</a>
+                        <g:link mapping="activityDetail" params="[id: activity.id]">
+                            ${activity.name}
+                        </g:link>
                     </h3>
                     <p class="description">${activity.description}</p>
                 </div>
@@ -103,8 +105,8 @@
                     </li>
                 </ul>
                 <div class="date">
-                    <span class="date-day">20</span>
-                    <span class="date-month">JUN</span>
+                    <span class="date-day">${activity.day}</span>
+                    <span class="date-month">${activity.month}</span>
                 </div>
             </div>
             </g:each>

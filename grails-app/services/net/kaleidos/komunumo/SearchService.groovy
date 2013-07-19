@@ -9,12 +9,12 @@ import java.text.DateFormatSymbols
  *
  */
 class SearchService {
-	
+
 	static transactional = false
-	
+
 	def grailsApplication
 
-	/**	
+	/**
 	 * Search for activities according to a neighbourhood, an activity type, and celebrated between now and now+days
 	 * @param neighbourhood
 	 * @param activityType
@@ -22,14 +22,14 @@ class SearchService {
 	 * @return List of activities
 	 */
     public List<Activity> activitySearch(Neighbourhood neighbourhood, ActivityType activityType, Date startDate, Date nextDate) {
-		
+
 		def activities = Activity.withCriteria {
 			if (neighbourhood) {
 				eq "neighbourhood.id",  neighbourhood.id
-			}			
+			}
 			if (activityType) {
 				eq "activityType.id", activityType.id
-			}			
+			}
 			if (startDate && nextDate) {
 				between('activityDate', startDate, nextDate)
 			}
@@ -37,20 +37,19 @@ class SearchService {
 
 		return activities
 	}
-	
+
 	public activityJsonFormatter(List<Activity> activityList) {
-		
+
 		def g = grailsApplication.mainContext.getBean('org.codehaus.groovy.grails.plugins.web.taglib.ApplicationTagLib')
-		
+
 		def result = []
 		activityList.each  { activity ->
-			def threeLettersMonth =  new DateFormatSymbols().getMonths()[activity.activityDate.format("MM").toInteger()][0..2]
 			def activityDetail = g.createLink(mapping: 'activityDetail', params: [id: activity.id], absolute: "true")
-			
+
 			result << [
 				'id' : activity.id,
-				'activityDayDate' : activity.activityDate.format("dd"),
-				'activityDayMonth' : threeLettersMonth,
+				'activityDayDate' : activity.day,
+				'activityDayMonth' : activity.month,
 				'activityTypeName' : activity.activityType?.name,
 				'activityTypeId' : activity.activityType?.id,
 				'url' : activityDetail,
@@ -62,9 +61,9 @@ class SearchService {
 				'name' : activity.name,
 				'neighbourhood' : activity.neighbourhood,
 				'place' : activity.place
-				
+
 			]
-		}		
+		}
 		return result
 
 	}

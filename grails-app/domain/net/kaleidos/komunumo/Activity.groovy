@@ -1,4 +1,5 @@
 package net.kaleidos.komunumo
+import java.text.DateFormatSymbols
 
 class Activity {
 
@@ -18,5 +19,13 @@ class Activity {
         place (blank:true, nullable:true)
         latitude (blank:true, nullable:true)
         longitude (blank:true, nullable:true)
+    }
+
+    public String getDay() {
+        this.activityDate.format("dd")
+    }
+
+    public String getMonth() {
+        new DateFormatSymbols().getMonths()[this.activityDate.format("MM").toInteger()][0..2]
     }
 }
