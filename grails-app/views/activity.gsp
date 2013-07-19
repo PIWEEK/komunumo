@@ -47,7 +47,7 @@
                 <ul class="activity-metadata">
                     <li class="address">
                         <span class="typcn typcn-location-outline"></span>
-                         ${activity.address}                        
+                         ${activity.address}
                     </li>
                     <li>
                         <span class="typcn typcn-directions"></span>
@@ -76,22 +76,23 @@
         </div><!-- /container -->
 
         <div class="related-activities container clearfix">
-            <h3 class="title">Actividades relacionadas</h3>
+            <h3 class="title">Otras actividades de ese barrio</h3>
+            <g:each var="activity" in="${activities}">
             <div class="single-activity activity-121">
                 <div class="activity-body">
                     <h3>
-                        <a href="#" title="Monta tu propio huerto">Monta tu propio huerto</a>
+                        <a href="#" title="Monta tu propio huerto">${activity.name}</a>
                     </h3>
-                    <p class="description">Te enseñamos a montar tu propio huerto ecológico.</p>
+                    <p class="description">${activity.description}</p>
                 </div>
                 <ul class="metadata-activity">
                     <li class="address">
                         <span class="typcn typcn-location-outline"></span>
-                        Centro Eco
+                        ${activity.place}
                     </li>
                     <li class="activity-type">
                         <span class="typcn typcn-ico-{{ activityTypeId }}"></span>
-                        Formación
+                        ${activity.activityType.name}
                     </li>
                 </ul>
                 <div class="date">
@@ -99,9 +100,10 @@
                     <span class="date-month">JUN</span>
                 </div>
             </div>
+            </g:each>
         </div>
-		
-		
+
+
         <!-- Compiled scripts -->
         <script src="app/bower_components/jquery/jquery.js"></script>
         <script src="app/bower_components/underscore/underscore.js"></script>
