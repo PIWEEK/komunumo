@@ -70,12 +70,12 @@
             </div>
             <div class="map right">
                 <div id="map-block" class="map-block"
-                    data-filter-category="0"
-                    data-filter-subcategory="0"
-                    data-filter-keywords="0"
-                    data-initial-lon="-3.86"
-                    data-initial-lat="40.38"
-                    data-initial-zoom="11"
+                    data-filter-category="${activity.id}"
+                    data-filter-subcategory=""
+                    data-filter-keywords=""
+                    data-initial-lon="-3.7"
+                    data-initial-lat="40.4"
+                    data-initial-zoom="12"
                     data-api-url="api/activity/detail/map">
                 </div>
             </div>

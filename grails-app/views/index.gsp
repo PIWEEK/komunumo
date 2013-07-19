@@ -99,8 +99,8 @@
                 data-filter-category=""
                 data-filter-subcategory=""
                 data-filter-keywords=""
-                data-initial-lon="-3.86"
-                data-initial-lat="40.38"
+                data-initial-lon="-3.7"
+                data-initial-lat="40.4"
                 data-initial-zoom="11"
                 data-api-url="api/activity/map">
             </div>
