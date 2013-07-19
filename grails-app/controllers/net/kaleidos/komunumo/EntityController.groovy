@@ -21,6 +21,8 @@ class EntityController {
 
     def entityDetailMap(String cat) {
         def entityId = cat
+        def entity
+
         if (entityId) {
             entity = Entity.get(entityId)
         }

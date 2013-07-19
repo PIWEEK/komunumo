@@ -94,6 +94,8 @@ class ActivityController {
 
     def activityDetailMap(String cat) {
         def activityId = cat
+        def activity
+
         if (activityId) {
             activity = Activity.get(activityId)
         }

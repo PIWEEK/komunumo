@@ -3202,6 +3202,20 @@ body {
   background: #d8e0e4;
 }
 
+.activity-view-body .activity-metadata a {
+  font-weight: bold;
+  color: #333;
+}
+
+.activity-view-body .activity-metadata a:hover {
+  color: #666;
+  -webkit-transition: all 0.2s ease-in;
+     -moz-transition: all 0.2s ease-in;
+      -ms-transition: all 0.2s ease-in;
+       -o-transition: all 0.2s ease-in;
+          transition: all 0.2s ease-in;
+}
+
 .activity-view-body .description {
   width: 633px;
   color: #666666;
