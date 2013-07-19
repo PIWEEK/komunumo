@@ -78,10 +78,11 @@ class ActivityController {
         render text
     }
 
-    def activityDetail(String activityId) {
+    def activityDetail(String id) {
+ 		
         def activity
-        if (activityId) {
-            activity = Activity.get(activityId)
+        if (id) {
+            activity = Activity.get(id)
         }
 
         return render(view:'/activity', model:[activity: activity, neigbourhoodList: Neighbourhood.list(), activityTypeList: ActivityType.list()])
