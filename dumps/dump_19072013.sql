@@ -176,13 +176,13 @@ ALTER TABLE public.users OWNER TO komunumo;
 
 COPY activity (id, version, activity_date, activity_type_id, address, description, entity_id, latitude, longitude, name, neighbourhood_id, place) FROM stdin;
 147	0	2013-08-01 00:00:00	125		Constitución de tres grupos de trabajo: local, global y comunicación, que con el tiempo han desaparecido. Actualmente nos reunimos en Asamblea General todos los sábados a las 12:30 horas.	140	40.4230003	-3.69799995	Asamblea	25	Plaza del encuentro
-141	2	2013-08-20 00:00:00	121	C/ Esquilache, 2 28003 Madrid (Madrid)	Te enseñamos a montar tu propio huerto ecológico. Aprenderás a cultivar por temporadas y a comer de manera saludable.	137	40525280	-3704945	Monta tu propio huerto	7	Centro Eco
-142	1	2013-08-10 00:00:00	122	C/ Esquilache, 2 28003 Madrid (Madrid)	Daremos un paseo por la sierra de Madrid y te enseñaremos a identificar rastros de animales, huellas, etc...	137	40525280	-3704945	Huella animal	7	Centro Eco
-143	1	2013-07-16 00:00:00	124	Av de Carabanchel Alto, 64‎ 28044 Madrid	Malabares, payasos, canciones... Trae a los pequeños de tu casa a jugar con nosotros!	134	40369880	-3753275	Juegos de niños	15	La casa del barrio
-144	1	2013-07-20 00:00:00	125	C/ Gaztambide 50 28015 Madrid (Madrid)	Para una banca ética, cooperativa y ciudadana es muy importante continuar ampliando el número de personas y organizaciones que formen parte de nuestra base social.	138	40436968	-3715267	Campaña de Capital Social	108	En nuestra oficina
-145	1	2013-07-25 00:00:00	123	c/ Argumosa, 10 28012 Madrid (Madrid)	Porque estamos hartos que la gente no tenga para comer. Ven a comer con familiares y amigos y por cada menú que consumas estarás donando un 50% del precio del menú al banco de alimentos de Madrid.	139	40408148	-3699285	Comida solidaria "Anti crisis"	38	El Granero de Lavapiés
-148	1	2013-07-22 00:00:00	120	Av de Carabanchel Alto, 64‎ 28044 Madrid	Partido de fútbol para jubilados! Anímate!	134	40369880	-3753275	Partido de futbol senior	15	Campos de futbol de Carabanchel
-149	1	2013-08-28 00:00:00	119	Calle de Eugenia de Montijo, 105, 28044 Madrid	Exposición de fotografía de Antonio Fernandez Loras.	134	40374208	-3751028	Exposición "La vida pasa"	93	Centro cultural García Lorca
+141	3	2013-08-20 00:00:00	121	C/ Esquilache, 2 28003 Madrid (Madrid)	Te enseñamos a montar tu propio huerto ecológico. Aprenderás a cultivar por temporadas y a comer de manera saludable.	137	40.52528	-3.70494509	Monta tu propio huerto	7	Centro Eco
+142	2	2013-08-10 00:00:00	122	C/ Esquilache, 2 28003 Madrid (Madrid)	Daremos un paseo por la sierra de Madrid y te enseñaremos a identificar rastros de animales, huellas, etc...	137	40.5250015	-3.704	Huella animal	7	Centro Eco
+143	2	2013-07-16 00:00:00	124	Av de Carabanchel Alto, 64‎ 28044 Madrid	Malabares, payasos, canciones... Trae a los pequeños de tu casa a jugar con nosotros!	134	40.3689995	-3.75300002	Juegos de niños	15	La casa del barrio
+144	2	2013-07-20 00:00:00	125	C/ Gaztambide 50 28015 Madrid (Madrid)	Para una banca ética, cooperativa y ciudadana es muy importante continuar ampliando el número de personas y organizaciones que formen parte de nuestra base social.	138	40.4360008	-3.71499991	Campaña de Capital Social	108	En nuestra oficina
+145	2	2013-07-25 00:00:00	123	c/ Argumosa, 10 28012 Madrid (Madrid)	Porque estamos hartos que la gente no tenga para comer. Ven a comer con familiares y amigos y por cada menú que consumas estarás donando un 50% del precio del menú al banco de alimentos de Madrid.	139	40.4080009	-3.69899988	Comida solidaria "Anti crisis"	38	El Granero de Lavapiés
+148	2	2013-07-22 00:00:00	120	Av de Carabanchel Alto, 64‎ 28044 Madrid	Partido de fútbol para jubilados! Anímate!	134	40.3689995	-3.75300002	Partido de futbol senior	15	Campos de futbol de Carabanchel
+149	2	2013-08-28 00:00:00	119	Calle de Eugenia de Montijo, 105, 28044 Madrid	Exposición de fotografía de Antonio Fernandez Loras.	134	40.3740005	-3.75099993	Exposición "La vida pasa"	93	Centro cultural García Lorca
 \.
 
 
@@ -217,10 +217,10 @@ COPY city (id, version, name) FROM stdin;
 
 COPY entity (id, version, address, description, entity_type, latitude, longitude, name, telephone, web, zone) FROM stdin;
 139	1	c/ Argumosa, 10 28012 Madrid (Madrid)	Restaurante semiecológico y laboralmente justo	Otros	40.4080009	-3.69899988	El Granero de Lavapiés	914677611	\N	\N
-137	1	C/ Esquilache, 2 28003 Madrid (Madrid) 	Ecocentro es un multiespacio creado en 1993, dedicado íntegramente a la vida alternativa y natural, al cuidado del ser humano y del planeta, siendo un establecimiento pionero de estas características en nuestro país.	Empresa/autónomo	40525280	-3704945	Ecocentro	915535502	http://www.ecocentro.es/	Local
-134	4	Av de Carabanchel Alto, 64‎ 28044 Madrid	Erase una vez una panda de locos y locas que soñaban con tener un lugar mágico donde encontrarse con los suyos que eran tantos que ya no cabían en el salón de su casa.  	Asociación de vecinos	40369880	-3753275	La casa del barrio	914253658	http://www.casadelbarriocarabanchel.es	Vallecas
-138	2	C/ Gaztambide 50 28015 Madrid (Madrid)	Fiare es una herramienta de intermediación financiera que pone los ahorros de personas y organizaciones responsables al servicio de proyectos con vocación de transformación social.	Cooperativa	40436968	-3715267	Fiare (Fiare- Bana Popolare Etica)	679847922	http://www.proyectofiare.com/	Zona centro y sur del país
 140	2	Varias direcciones	Asamblea popular del #15m	Asamblea popular	40.4230003	-3.69799995	Asamblea Popular de Chueca	\N	http://chueca.tomalosbarrios.net/	Barrio Chueca
+137	2	C/ Esquilache, 2 28003 Madrid (Madrid) 	Ecocentro es un multiespacio creado en 1993, dedicado íntegramente a la vida alternativa y natural, al cuidado del ser humano y del planeta, siendo un establecimiento pionero de estas características en nuestro país.	Empresa/autónomo	40.5250015	-3.704	Ecocentro	915535502	http://www.ecocentro.es/	Local
+134	5	Av de Carabanchel Alto, 64‎ 28044 Madrid	Erase una vez una panda de locos y locas que soñaban con tener un lugar mágico donde encontrarse con los suyos que eran tantos que ya no cabían en el salón de su casa.  	Asociación de vecinos	40.3689995	-3.75300002	La casa del barrio	914253658	http://www.casadelbarriocarabanchel.es	Vallecas
+138	3	C/ Gaztambide 50 28015 Madrid (Madrid)	Fiare es una herramienta de intermediación financiera que pone los ahorros de personas y organizaciones responsables al servicio de proyectos con vocación de transformación social.	Cooperativa	40.4360008	-3.71499991	Fiare (Fiare- Bana Popolare Etica)	679847922	http://www.proyectofiare.com/	Zona centro y sur del país
 \.
 
 
