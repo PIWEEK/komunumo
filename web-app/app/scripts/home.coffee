@@ -49,9 +49,9 @@ class HomeView extends Backbone.Epoxy.View
         
         map = @$el.find('#map-block');
         
-        map.attr('data-filter-category', neighborhoodVal)
-        map.attr('data-filter-subcategory', activityVal)
-        map.attr('data-filter-keywords', dateVal)
+        map.data('filter-category', neighborhoodVal)
+        map.data('filter-subcategory', activityVal)
+        map.data('filter-keywords', dateVal)
         
         Macadjan.mapView.refresh();
         
