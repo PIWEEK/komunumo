@@ -72,7 +72,7 @@
                     data-initial-lon="-3.86"
                     data-initial-lat="40.38"
                     data-initial-zoom="11"
-                    data-api-url="api/activity/map">
+                    data-api-url="api/activity/detail/map">
                 </div>
             </div>
         </div><!-- /container -->

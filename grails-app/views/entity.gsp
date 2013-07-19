@@ -64,13 +64,13 @@
             </div>
             <div class="map right">
                 <div id="map-block" class="map-block"
-                    data-filter-category="5"
-                    data-filter-subcategory="125"
-                    data-filter-keywords="1"
+                    data-filter-category="0"
+                    data-filter-subcategory="0"
+                    data-filter-keywords="0"
                     data-initial-lon="-3.86"
                     data-initial-lat="40.38"
                     data-initial-zoom="11"
-                    data-api-url="api/entity/map">
+                    data-api-url="api/entity/detail/map">
                 </div>
             </div>
         </div><!-- /container -->
