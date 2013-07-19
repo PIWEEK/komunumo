@@ -3202,6 +3202,10 @@ body {
   background: #d8e0e4;
 }
 
+.activity-view-body .activity-metadata li {
+  padding: 2px 0;
+}
+
 .activity-view-body .activity-metadata a {
   font-weight: bold;
   color: #333;

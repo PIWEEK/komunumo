@@ -88,12 +88,12 @@ Macadjan.MapView = Backbone.View.extend({
 
         this.style = new OpenLayers.Style({
             pointRadius: "${radius}",
-            fillColor: "#ff9909",
+            fillColor: "#165044",
             //fillColor: "#cc1111",
-            fillOpacity: 0.9,
-            strokeColor: "#f15800",
+            fillOpacity: 0.7,
+            strokeColor: "#000",
             //strokeColor: "#cc1111",
-            strokeWidth: 10,
+            strokeWidth: 2,
             strokeOpacity: 0.4,
             label: "${count}",
             fontColor: "#ffffff"

@@ -46,6 +46,10 @@
             <h1 class="title">${activity?.name}</h1>
             <div class="description left">
                 <ul class="activity-metadata">
+                    <li class="date">
+                        <span class="typcn typcn-calender"></span>
+                         ${activity.day} ${activity.month}
+                    </li>
                     <li class="address">
                         <span class="typcn typcn-location-outline"></span>
                          ${activity.address}
