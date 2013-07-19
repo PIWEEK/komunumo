@@ -31,10 +31,10 @@ class EntityController {
 
         if (entity.latitude && entity.longitude) {
             def domain = "localhost:8080"
-            def title = "<a href=" + "\"" + "http://" + domain + "/entity/detail/" + entity.id + "\">" + entity.name + "</a>"
+            def title = "<a href=" + "\"" + "http://" + domain + "/komunumo/entity/detail?id=" + entity.id + "\">" + entity.name + "</a>"
             def description = "<br/>" + entity.description
 
-            text += entity.latitude + "\t" + entity.longitude + "\t" + "/images/marker.png" + "\t" + 32 + "," + 32 + "\t" + -16 + "," + -16 + "\t" + title + "\t" + description + "\t" + 300 + "," + 120 + "\n"
+            text += entity.latitude + "\t" + entity.longitude + "\t" + "/komunumo/images/marker.png" + "\t" + 32 + "," + 32 + "\t" + -16 + "," + -16 + "\t" + title + "\t" + description + "\t" + 300 + "," + 120 + "\n"
         }
 
         render text

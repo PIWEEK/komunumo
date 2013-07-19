@@ -68,10 +68,10 @@ class ActivityController {
         activitiesList.each { activity ->
             if (activity.latitude && activity.longitude) {
                 def domain = "localhost:8080"
-                def title = "<a href=" + "\"" + "http://" + domain + "/activity/detail/" + activity.id + "\">" + activity.name + "</a>"
+                def title = "<a href=" + "\"" + "http://" + domain + "/komunumo/activity/detail?id=" + activity.id + "\">" + activity.name + "</a>"
                 def description = "<br/>" + activity.description
 
-                text += activity.latitude + "\t" + activity.longitude + "\t" + "/images/marker.png" + "\t" + 32 + "," + 32 + "\t" + -16 + "," + -16 + "\t" + title + "\t" + description + "\t" + 300 + "," + 120 + "\n"
+                text += activity.latitude + "\t" + activity.longitude + "\t" + "/komunumo/images/marker.png" + "\t" + 32 + "," + 32 + "\t" + -16 + "," + -16 + "\t" + title + "\t" + description + "\t" + 300 + "," + 120 + "\n"
             }
         }
 
@@ -104,10 +104,10 @@ class ActivityController {
 
         if (activity.latitude && activity.longitude) {
             def domain = "localhost:8080"
-            def title = "<a href=" + "\"" + "http://" + domain + "/activity/detail/" + activity.id + "\">" + activity.name + "</a>"
+            def title = "<a href=" + "\"" + "http://" + domain + "/komunumo/activity/detail?id=" + activity.id + "\">" + activity.name + "</a>"
             def description = "<br/>" + activity.description
 
-            text += activity.latitude + "\t" + activity.longitude + "\t" + "/images/marker.png" + "\t" + 32 + "," + 32 + "\t" + -16 + "," + -16 + "\t" + title + "\t" + description + "\t" + 300 + "," + 120 + "\n"
+            text += activity.latitude + "\t" + activity.longitude + "\t" + "/komunumo/images/marker.png" + "\t" + 32 + "," + 32 + "\t" + -16 + "," + -16 + "\t" + title + "\t" + description + "\t" + 300 + "," + 120 + "\n"
         }
 
         render text
