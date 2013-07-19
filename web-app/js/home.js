@@ -92,11 +92,11 @@
       neighborhoodVal = this.$el.find('.neighborhood-select option:selected').val();
       activityVal = this.$el.find('.activity-select option:selected').val();
       dateVal = this.$el.find('.date-select option:selected').val();
-      map = this.$el.find('.map-block');
+      map = this.$el.find('#map-block');
       map.attr('data-filter-category', neighborhoodVal);
       map.attr('data-filter-subcategory', activityVal);
       map.attr('data-filter-keywords', dateVal);
-      return this.Macadjan.mapView.refresh();
+      return Macadjan.mapView.refresh();
     };
 
     HomeView.prototype.searchEvents = function(event) {

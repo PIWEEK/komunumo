@@ -47,13 +47,13 @@ class HomeView extends Backbone.Epoxy.View
         activityVal = @$el.find('.activity-select option:selected').val()
         dateVal = @$el.find('.date-select option:selected').val()
         
-        map = @$el.find('.map-block');
+        map = @$el.find('#map-block');
         
         map.attr('data-filter-category', neighborhoodVal)
         map.attr('data-filter-subcategory', activityVal)
         map.attr('data-filter-keywords', dateVal)
         
-        @Macadjan.mapView.refresh();
+        Macadjan.mapView.refresh();
         
     searchEvents: (event) ->
         element = @
