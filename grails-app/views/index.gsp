@@ -96,9 +96,9 @@
 
         <section class="map">
             <div id="map-block" class="map-block"
-                data-filter-category="1"
-                data-filter-subcategory="1"
-                data-filter-keywords="1"
+                data-filter-category=""
+                data-filter-subcategory=""
+                data-filter-keywords=""
                 data-initial-lon="-3.86"
                 data-initial-lat="40.38"
                 data-initial-zoom="11"
