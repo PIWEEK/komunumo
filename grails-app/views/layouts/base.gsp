@@ -13,10 +13,6 @@
 
 		<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
 
-        <!-- build:js scripts/vendor/modernizr.js -->
-        <script src="app/bower_components/modernizr/modernizr.js"></script>
-        <!-- endbuild -->
-
 		<g:layoutHead/>
 		<r:layoutResources />
 	</head>
@@ -26,10 +22,6 @@
             <div class="logo text-indent">Komunumo</div>
             <div class="logo-piweek text-indent">Piweek</div>
         </div>
-        <script src="app/bower_components/jquery/jquery.js"></script>
-        <script src="app/bower_components/underscore/underscore.js"></script>
-        <script src="app/bower_components/backbone/backbone.js"></script>
-		<g:javascript library="application"/>
 		<r:layoutResources />
 	</body>
 </html>

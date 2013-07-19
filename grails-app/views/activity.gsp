@@ -2,6 +2,8 @@
     <head>
          <meta name="layout" content="base" />
          <title>Activity name | Komunumo</title>
+         <r:require module="activity" />
+         <r:layoutResources/>
     </head>
     <!-- end of base temaplate -->
     <body data-view="activity">
@@ -103,14 +105,7 @@
 		
 		
         <!-- Compiled scripts -->
-        <script src="app/bower_components/jquery/jquery.js"></script>
-        <script src="app/bower_components/underscore/underscore.js"></script>
-        <script src="app/bower_components/backbone/backbone.js"></script>
-        <script src="app/bower_components/backbone.epoxy/backbone.epoxy.min.js"></script>
-        <script src="js/openlayers/OpenLayers.js"></script>
-        <script src="js/map.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/home.js"></script>
         <!-- endbuild -->
+        <r:layoutResources/>
     </body>
 </html>
