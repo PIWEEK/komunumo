@@ -69,7 +69,7 @@ class ActivityController {
             if (activity.latitude && activity.longitude) {
                 def domain = "localhost:8080"
                 def title = "<a class=\"popup-title\" href=" + "\"" + "http://" + domain + "/komunumo/activity/detail?id=" + activity.id + "\">" + activity.name + "</a>"
-                def description = "<br/>" + "<span class=\"popup-description\">" + activity.description + "</span>"
+                def description = "<span class=\"popup-description\">" + activity.description + "</span>"
 
                 text += activity.latitude + "\t" + activity.longitude + "\t" + "/komunumo/images/marker.png" + "\t" + 25 + "," + 25 + "\t" + -16 + "," + -16 + "\t" + title + "\t" + description + "\t" + 300 + "," + 120 + "\n"
             }
@@ -105,7 +105,7 @@ class ActivityController {
         if (activity.latitude && activity.longitude) {
             def domain = "localhost:8080"
             def title = "<a class=\"popup-title\" href=" + "\"" + "http://" + domain + "/komunumo/activity/detail?id=" + activity.id + "\">" + activity.name + "</a>"
-            def description = "<br/>" + "<span class=\"popup-description\">" + activity.description + "</span>"
+            def description = "<span class=\"popup-description\">" + activity.description + "</span>"
 
             text += activity.latitude + "\t" + activity.longitude + "\t" + "/komunumo/images/marker.png" + "\t" + 25 + "," + 25 + "\t" + -16 + "," + -16 + "\t" + title + "\t" + description + "\t" + 300 + "," + 120 + "\n"
         }
