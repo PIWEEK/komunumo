@@ -56,8 +56,14 @@
                          ${activity.place}
                     </li>
                     <li class="activity-type">
-                        <span class="typcn typcn-ico-124"></span>
+                        <span class="typcn typcn-ico-${activity.activityType.id}"></span>
                         ${activity.activityType?.name}
+                    </li>
+                    <li class="activity-entity">
+                        <span class="typcn typcn-home-outline"></span>
+                        <g:link mapping="entityDetail" params="[id: activity.entity.id]">
+                            ${activity.entity.name}
+                        </g:link>
                     </li>
                 </ul>
                 <article class="description-text">
@@ -77,6 +83,7 @@
             </div>
         </div><!-- /container -->
 
+        <g:if test="${activities}">
         <div class="related-activities container clearfix">
             <h3 class="title">Otras actividades de ese barrio</h3>
             <g:each var="activity" in="${activities}">
@@ -104,7 +111,7 @@
             </div>
             </g:each>
         </div>
-
+        </g:if>
 
         <!-- Compiled scripts -->
         <!-- endbuild -->

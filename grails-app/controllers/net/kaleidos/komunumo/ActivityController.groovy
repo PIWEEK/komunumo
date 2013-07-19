@@ -87,7 +87,7 @@ class ActivityController {
 
         def activities = Activity.withCriteria {
             eq "neighbourhood.id",  activity.neighbourhood.id
-        }
+        }-activity
 
         return render(view:'/activity', model:[activity: activity, activities: activities, neigbourhoodList: Neighbourhood.list(), activityTypeList: ActivityType.list()])
     }

@@ -54,7 +54,7 @@
                          ${entity.zone}
                     </li>
                     <li class="activity-type">
-                        <span class="typcn typcn-ico-124"></span>
+                        <span class="typcn typcn-group-outline"></span>
                         ${entity.entityType}
                     </li>
                 </ul>
@@ -75,6 +75,7 @@
             </div>
         </div><!-- /container -->
 
+        <g:if test="${activities}">
         <div class="related-activities container clearfix">
             <h3 class="title">Otras actividades de esa entidad</h3>
             <g:each var="activity" in="${activities}">
@@ -102,7 +103,7 @@
             </div>
             </g:each>
         </div>
-
+        </g:if>
 
         <!-- Compiled scripts -->
         <script src="app/bower_components/jquery/jquery.js"></script>
