@@ -69,7 +69,7 @@
                     data-filter-keywords=""
                     data-initial-lon="-3.7"
                     data-initial-lat="40.4"
-                    data-initial-zoom="12"
+                    data-initial-zoom="11"
                     data-api-url="${createLink(uri: '/api/entity/detail/map', absolute: true)}">
                 </div>
             </div>
