@@ -19,9 +19,10 @@ class EntityController {
         return render(view:'/entity', model:[entity: entity, activities: activities, neigbourhoodList: Neighbourhood.list(), activityTypeList: ActivityType.list()])
     }
 
-    def entityDetailMap(String id) {
-        if (id) {
-            entity = Entity.get(id)
+    def entityDetailMap(String cat) {
+        def entityId = cat
+        if (entityId) {
+            entity = Entity.get(entityId)
         }
 
         String text = 'lat\tlon\ticon\ticonSize\ticonOffset\ttitle\tdescription\tpopupSize\n'

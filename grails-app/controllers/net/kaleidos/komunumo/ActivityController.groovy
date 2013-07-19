@@ -92,9 +92,10 @@ class ActivityController {
         return render(view:'/activity', model:[activity: activity, activities: activities, neigbourhoodList: Neighbourhood.list(), activityTypeList: ActivityType.list()])
     }
 
-    def activityDetailMap(String id) {
-        if (id) {
-            activity = Activity.get(id)
+    def activityDetailMap(String cat) {
+        def activityId = cat
+        if (activityId) {
+            activity = Activity.get(activityId)
         }
 
         String text = 'lat\tlon\ticon\ticonSize\ticonOffset\ttitle\tdescription\tpopupSize\n'
