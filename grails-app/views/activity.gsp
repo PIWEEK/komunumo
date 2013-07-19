@@ -110,6 +110,7 @@
                 </div>
             </div>
             </g:each>
+        </g:if>
         </div>
         <r:require module="activity" />
     </body>

@@ -70,7 +70,7 @@
                     data-initial-lon="-3.86"
                     data-initial-lat="40.38"
                     data-initial-zoom="11"
-                    data-api-url="/komunumo/api/activity/map">
+                    data-api-url="/api/entity/detail/map">
                 </div>
             </div>
         </div><!-- /container -->
@@ -82,7 +82,9 @@
             <div class="single-activity activity-${activity.activityType.id}">
                 <div class="activity-body">
                     <h3>
-                        <a href="#" title="Monta tu propio huerto">${activity.name}</a>
+                        <g:link mapping="activityDetail" params="[id: activity.id]">
+                            ${activity.name}
+                        </g:link>
                     </h3>
                     <p class="description">${activity.description}</p>
                 </div>
