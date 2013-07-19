@@ -79,18 +79,22 @@ class ActivityController {
     }
 
     def activityDetail(String id) {
- 		
+
         def activity
         if (id) {
             activity = Activity.get(id)
         }
 
-        return render(view:'/activity', model:[activity: activity, neigbourhoodList: Neighbourhood.list(), activityTypeList: ActivityType.list()])
+        def activities = Activity.withCriteria {
+            eq "neighbourhood.id",  activity.neighbourhood.id
+        }
+
+        return render(view:'/activity', model:[activity: activity, activities: activities, neigbourhoodList: Neighbourhood.list(), activityTypeList: ActivityType.list()])
     }
 
-    def activityDetailMap(String activityId) {
-        if (activityId) {
-            activity = Activity.get(activityId)
+    def activityDetailMap(String id) {
+        if (id) {
+            activity = Activity.get(id)
         }
 
         String text = 'lat\tlon\ticon\ticonSize\ticonOffset\ttitle\tdescription\tpopupSize\n'
