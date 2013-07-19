@@ -1,8 +1,4 @@
 modules = {
-    application {
-        resource url:'js/application.js'
-    }
-	
 	activity {
 		resource url: 'app/bower_components/jquery/jquery.js'
 		resource url: 'app/bower_components/underscore/underscore.js'

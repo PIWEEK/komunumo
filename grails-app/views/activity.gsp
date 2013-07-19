@@ -2,8 +2,6 @@
     <head>
          <meta name="layout" content="base" />
          <title>Activity name | Komunumo</title>
-         <r:require module="activity" />
-         <r:layoutResources/>
     </head>
     <!-- end of base temaplate -->
     <body data-view="activity">
@@ -72,7 +70,7 @@
                     data-initial-lon="-3.86"
                     data-initial-lat="40.38"
                     data-initial-zoom="11"
-                    data-api-url="api/activity/map">
+                    data-api-url="/komunumo/api/activity/map">
                 </div>
             </div>
         </div><!-- /container -->
@@ -104,10 +102,6 @@
             </div>
             </g:each>
         </div>
-
-
-        <!-- Compiled scripts -->
-        <!-- endbuild -->
-        <r:layoutResources/>
+        <r:require module="activity" />
     </body>
 </html>
