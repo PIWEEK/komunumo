@@ -80,7 +80,7 @@
         <div class="related-activities container clearfix">
             <h3 class="title">Otras actividades de ese barrio</h3>
             <g:each var="activity" in="${activities}">
-            <div class="single-activity activity-121">
+            <div class="single-activity activity-${activity.activityType.id}">
                 <div class="activity-body">
                     <h3>
                         <a href="#" title="Monta tu propio huerto">${activity.name}</a>
@@ -93,7 +93,7 @@
                         ${activity.place}
                     </li>
                     <li class="activity-type">
-                        <span class="typcn typcn-ico-{{ activityTypeId }}"></span>
+                        <span class="typcn typcn-ico-${activity.activityType.id}"></span>
                         ${activity.activityType.name}
                     </li>
                 </ul>
