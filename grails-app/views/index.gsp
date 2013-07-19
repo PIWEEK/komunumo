@@ -2,6 +2,7 @@
     <head>
          <meta name="layout" content="base" />
          <title>Komunumo</title>
+         <r:require module="activity" />
     </head>
     <!-- end of base temaplate -->
     <body>
@@ -102,7 +103,7 @@
                 data-initial-lon="-3.7"
                 data-initial-lat="40.4"
                 data-initial-zoom="11"
-                data-api-url="api/activity/map">
+                data-api-url="${createLink(uri: '/api/activity/map', absolute: true)}">
             </div>
         </section>
 
@@ -135,6 +136,5 @@
                 </div>
 
         </script>
-        <r:require module="activity" />    
     </body>
 </html>

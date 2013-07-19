@@ -2,6 +2,7 @@
     <head>
          <meta name="layout" content="base" />
          <title>Activity name | Komunumo</title>
+         <r:require module="activity" />
     </head>
     <!-- end of base temaplate -->
     <body data-view="activity">
@@ -76,7 +77,7 @@
                     data-initial-lon="-3.7"
                     data-initial-lat="40.4"
                     data-initial-zoom="12"
-                    data-api-url="api/activity/detail/map">
+                    data-api-url="${createLink(uri: '/api/activity/detail/map', absolute: true)}">
                 </div>
             </div>
         </div><!-- /container -->
@@ -112,6 +113,5 @@
             </g:each>
         </g:if>
         </div>
-        <r:require module="activity" />
     </body>
 </html>
