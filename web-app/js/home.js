@@ -93,9 +93,10 @@
       activityVal = this.$el.find('.activity-select option:selected').val();
       dateVal = this.$el.find('.date-select option:selected').val();
       map = this.$el.find('.map-block');
-      map.data('filter-category', neighborhoodVal);
-      map.data('filter-subcategory', activityVal);
-      return map.data('filter-keywords', dateVal);
+      map.attr('data-filter-category', neighborhoodVal);
+      map.attr('data-filter-subcategory', activityVal);
+      map.attr('data-filter-keywords', dateVal);
+      return this.Macadjan.mapView.refresh();
     };
 
     HomeView.prototype.searchEvents = function(event) {
@@ -114,7 +115,6 @@
               scrollTop: 670
             }, 1000, function() {
               element.$('.activity-search').find('.no-results').remove();
-              element.find('.search-text').text('Busco');
               return element.initMap();
             });
           } else {

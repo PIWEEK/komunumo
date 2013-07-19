@@ -116,7 +116,7 @@
                         <h3>
                             <a href="{{ url }}" title="{{name}}">{{name}}</a>
                         </h3>
-                        <p class="description">{{ description }}</p>
+                        <p class="description">{{ description }}...</p>
                     </div>
                     <ul class="metadata-activity">
                         <li class="address">
