@@ -54,7 +54,7 @@
                          ${entity.zone}
                     </li>
                     <li class="activity-type">
-                        <span class="typcn typcn-ico-124"></span>
+                        <span class="typcn typcn-group-outline"></span>
                         ${entity.entityType}
                     </li>
                 </ul>
@@ -64,9 +64,9 @@
             </div>
             <div class="map right">
                 <div id="map-block" class="map-block"
-                    data-filter-category="5"
-                    data-filter-subcategory="125"
-                    data-filter-keywords="1"
+                    data-filter-category="0"
+                    data-filter-subcategory="0"
+                    data-filter-keywords="0"
                     data-initial-lon="-3.86"
                     data-initial-lat="40.38"
                     data-initial-zoom="11"
@@ -75,10 +75,11 @@
             </div>
         </div><!-- /container -->
 
+        <g:if test="${activities}">
         <div class="related-activities container clearfix">
             <h3 class="title">Otras actividades de esa entidad</h3>
             <g:each var="activity" in="${activities}">
-            <div class="single-activity activity-121">
+            <div class="single-activity activity-${activity.activityType.id}">
                 <div class="activity-body">
                     <h3>
                         <a href="#" title="Monta tu propio huerto">${activity.name}</a>
@@ -91,7 +92,7 @@
                         ${activity.place}
                     </li>
                     <li class="activity-type">
-                        <span class="typcn typcn-ico-{{ activityTypeId }}"></span>
+                        <span class="typcn typcn-ico-${activity.activityType.id}"></span>
                         ${activity.activityType.name}
                     </li>
                 </ul>
@@ -102,7 +103,7 @@
             </div>
             </g:each>
         </div>
-
+        </g:if>
 
         <!-- Compiled scripts -->
         <script src="app/bower_components/jquery/jquery.js"></script>
