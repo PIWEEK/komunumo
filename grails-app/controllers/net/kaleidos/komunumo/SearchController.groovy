@@ -62,10 +62,14 @@ class SearchController {
 		}
 
 		def result = searchService.activitySearch(neighbourhood, activityType, realNow, endDate)
-		if (success) {
-			return render(text:[success:success, list:searchService.activityJsonFormatter(result)] as JSON, contentType:'text/json')
+		if (params?.searchResult == 'true') {
+			render view:'/index', model:[dataView: 'HomeView', neigbourhoodList: Neighbourhood.list(), activityTypeList: ActivityType.list(), activities: result]
 		} else {
-		return render(text:[success:success, list:[]] as JSON, contentType:'text/json')
+			if (success) {
+				return render(text:[success:success, list:searchService.activityJsonFormatter(result)] as JSON, contentType:'text/json')
+			} else {
+			return render(text:[success:success, list:[]] as JSON, contentType:'text/json')
+			}
 		}
 	}
 }

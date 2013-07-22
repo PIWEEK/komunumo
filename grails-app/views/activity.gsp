@@ -10,7 +10,8 @@
        <nav class="single-header activity-view">
             <div class="container clearfix">
                 <div class="logo"><a class="text-indent" href="/komunumo" title="Komunumo">Komunumo</a></div>
-                <form>
+                <g:form mapping="activitySearch"> 
+                    <input type="hidden" name="searchResult" value="${true}"/>
                     <fieldset class="neighborhood-select">
                         <select name="neighId">
                             <option value="" class="default selected" selected="selected">¿Qué barrio?</option>
@@ -37,9 +38,9 @@
                         </select>
                     </fieldset>
                     <fieldset>
-                        <a href="#" class="search-event btn" title="Busca eventos">Buscar!</a>
+                        <g:submitButton name="Buscar !" class="btn" />
                     </fieldset>
-                </form>
+                </g:form>
             </div><!-- /container -->
         </nav>
         <div class="activity-view-body container clearfix">

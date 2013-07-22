@@ -3,6 +3,7 @@ class UrlMappings {
 	static mappings = {
 		name admin: "/admin" {controller = 'admin'; action = 'scaffolding'}
 		name search: "/api/activity/search" {controller = 'search'; action = 'activitySearch'}
+		name activitySearch: "/activity/api/search" {controller = 'search'; action = 'activitySearch'}		
 		name activityMap: "/api/activity/map" {controller = 'activity'; action = 'activityMap'}
         name index: "/" {controller = 'index'; action = 'show'}
         name activityDetail: "/activity/detail" {controller = 'activity'; action = 'activityDetail'}

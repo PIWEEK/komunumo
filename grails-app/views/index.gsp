@@ -10,7 +10,7 @@
             <div class="container">
                 <h1 class="logo text-indent">Komunumo</h1>
                 <div class="activity-search">
-                    <h2>Qué hacer en el barrio</h2>
+                    <h2>${activities}</h2>
                     <form action="" class="search-form">
                         <fieldset class="neighborhood-select">
                             <select name="neighId">
