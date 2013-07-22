@@ -3173,6 +3173,21 @@ body {
   margin-bottom: 40px;
 }
 
+.popup-title,
+.popup-description {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-sie: .9em;
+}
+
+.popup-title {
+  color: #165044;
+  text-decoration: none;
+}
+
+.popup-description {
+  color: #9cb0ba;
+}
+
 /* ================================================================
  * ACTIVITIES LIST
  * =============================================================== */
@@ -3200,6 +3215,10 @@ body {
   color: #666;
   list-style: none;
   background: #d8e0e4;
+}
+
+.activity-view-body .activity-metadata li {
+  padding: 2px 0;
 }
 
 .activity-view-body .activity-metadata a {
